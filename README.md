@@ -53,43 +53,43 @@ CamelCase --> Cada palabra empieza con mayúscula
 
 LowerCamelCase --> Camel Case pero la primera siempre empieza con minúscula
 
-<code>
+<pre>
   const callEndPoint = () => {} </br>
   const callFetch = () => {} </br>
   const getData = () => {} </br>
   const createUser = () => {} </br>
   const registerUser = () => {} </br>
   const removeUser = () => {} </br>
-</code>
+</pre>
 
 <br/>
 
 # 6. **Handlers de Components siempre anteponer "handle"**
 
-<code>
+<pre>
   const handleChange = () => {} </br>
   const handleSubmit = () => {} </br>
   const handleBlur = () => {} </br>
   const handleClick = () => {} </br>
-</code>
+</pre>
 
 <br/>
 
 # 7. **Handlers de Context no agregar "no" ni "handle", ser específicos de la acción de la función en lo posible**
 
-<code>
+<pre>
   const addUser = () => {} </br>
   const removeUser = () => {} </br>
   const updateUser = () => {} </br>
-</code>
+</pre>
 
 <br />
 
 # 8. **Custom Hooks siempre anteponer "use"**
 
-<code>
+<pre>
   useCard() </br>
   useFetch() </br>
   useCallEndPoint() </br>
   useForm() </br>
-</code>
+</pre>
