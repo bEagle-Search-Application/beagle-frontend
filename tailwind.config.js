@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
@@ -45,9 +44,6 @@ module.exports = {
 				'success-800': '#166534',
 				'success-900': '#14532D',
 				'error-100': '#FEE2E2',
-			},
-			fontFamily: {
-				helvetica: 'HELVETICA, Arial, sans-serif',
 			},
 		},
 	},
