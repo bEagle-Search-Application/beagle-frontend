@@ -22,15 +22,20 @@
 		"import/extensions": "off",
 		"import/no-unresolved": "off",
 		"no-unused-vars": "warn",
+		"no-duplicate-imports": "error",
+		"import/no-named-default": "off",
+		"no-console": 1,
+		"import/prefer-default-export": "off",
+		"react/prop-types": 0,
+		"react/function-component-definition": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [
 			1,
 			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
 		],
-		"no-duplicate-imports": "error",
-		"react/prop-types": 0,
-		"@typescript-eslint/no-explicit-any": 1,
-		"no-console": 1,
-		"import/prefer-default-export": "off"
+		"react/button-has-type": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"@typescript-eslint/no-explicit-any": 1
 	}
 }
