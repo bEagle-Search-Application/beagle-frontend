@@ -5,9 +5,6 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 	content: string
 	size: 'small' | 'medium' | 'large'
 
-	textColor?: 'white' | 'black'
-
-	bgColor?: string
 	leftIcon?: ReactElement<IconProps>
 	rightIcon?: ReactElement<IconProps>
 }
@@ -15,29 +12,21 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 interface BadgeContainerProps extends HTMLAttributes<HTMLButtonElement> {
 	size: 'small' | 'medium' | 'large'
 
-	textColor?: string
-	bgColor?: string
-
 	children: ReactNode
 }
 
 const BadgeContainer: FC<BadgeContainerProps> = ({
 	size,
-	textColor,
-	bgColor,
+	className,
 	children,
 
 	...attributes
 }) => {
-	const variableStyles = `${bgColor || 'bg-primary-300'} text-${
-		textColor || 'white'
-	}`
-
 	switch (size) {
 		case 'small':
 			return (
 				<button
-					className={`${variableStyles} py-1 px-2 rounded-lg text-xs font-bold flex items-center`}
+					className={`${className} py-1 px-2 rounded-lg text-xs font-bold flex items-center`}
 					{...attributes}
 				>
 					{children}
@@ -47,7 +36,7 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 		case 'medium':
 			return (
 				<button
-					className={`${variableStyles} py-1 px-3 rounded-[10px] text-base flex items-center`}
+					className={`${className} py-1 px-3 rounded-[10px] text-base flex items-center`}
 					{...attributes}
 				>
 					{children}
@@ -57,7 +46,7 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 		case 'large':
 			return (
 				<button
-					className={`${variableStyles} py-1 px-3 rounded-lg text-lg flex items-center`}
+					className={`${className} py-1 px-3 rounded-lg text-lg flex items-center`}
 					{...attributes}
 				>
 					{children}
@@ -69,14 +58,13 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 }
 
 export const Badge: FC<ButtonProps> = ({
-	bgColor,
 	size,
 	content,
-	textColor,
+	className,
 	leftIcon,
 	rightIcon,
 }) => (
-	<BadgeContainer size={size} bgColor={bgColor} textColor={textColor}>
+	<BadgeContainer size={size} className={className}>
 		{leftIcon && <div className='mr-1'>{leftIcon}</div>}
 		<span>{content}</span>
 		{rightIcon && <div className='ml-1'>{rightIcon}</div>}
