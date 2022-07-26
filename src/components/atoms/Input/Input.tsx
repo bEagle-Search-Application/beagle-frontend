@@ -11,13 +11,16 @@ export const Input: FC<InputProps> = ({
 	className = '',
 	leftIcon,
 	rightIcon,
+
 	...attributes
 }) => (
-	<div className='flex items-center px-2 py-2.5 max-w-sm rounded-xl'>
+	<div
+		className={`text-sm flex items-center px-2 py-2.5 max-w-sm rounded-xl ${className}`}
+	>
 		{leftIcon && <div className='flex'>{leftIcon}</div>}
 		<input
 			type='text'
-			className={`text-smrounded-xl ml-[6px] mr-5 placeholder-neutral-400 bg-transparent ${className} flex-auto`}
+			className='ml-[6px] mr-5 placeholder-neutral-400 bg-transparent flex-auto caret-primary-600'
 			{...attributes}
 		/>
 		{rightIcon && <div className='flex'>{rightIcon}</div>}
