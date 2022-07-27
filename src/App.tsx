@@ -1,6 +1,6 @@
 function App() {
 	return (
-		<div className='App text-center bg-sky-400'>
+		<div className='App text-center '>
 			<h1 className='text-3xl font-bold underline'>Hello world!</h1>
 		</div>
 	)
