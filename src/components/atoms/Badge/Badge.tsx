@@ -26,7 +26,9 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 		case 'small':
 			return (
 				<button
-					className={`${className} py-1 px-2 rounded-lg text-xs font-bold flex items-center`}
+					className={`py-1 px-2 rounded-lg text-xs font-bold flex items-center ${
+						className || ''
+					}`}
 					{...attributes}
 				>
 					{children}
@@ -36,7 +38,9 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 		case 'medium':
 			return (
 				<button
-					className={`${className} py-1 px-3 rounded-[10px] text-base flex items-center`}
+					className={`py-1 px-3 rounded-[10px] text-base flex items-center ${
+						className || ''
+					}`}
 					{...attributes}
 				>
 					{children}
@@ -46,7 +50,9 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 		case 'large':
 			return (
 				<button
-					className={`${className} py-1 px-3 rounded-lg text-lg flex items-center`}
+					className={`py-1 px-3 rounded-lg text-lg flex items-center ${
+						className || ''
+					}`}
 					{...attributes}
 				>
 					{children}
