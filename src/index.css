@@ -23,3 +23,8 @@ code {
 input {
 	outline: none;
 }
+
+button {
+	outline: none;
+	border: none;
+}
