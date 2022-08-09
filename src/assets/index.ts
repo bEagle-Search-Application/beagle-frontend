@@ -1,1 +1,8 @@
 export { AlertCircleIcon } from './icons/AlertCircleIcon'
+export { ContactIcon } from './icons/ContactIcon'
+export { MapIcon } from './icons/MapIcon'
+export { RewardIcon } from './icons/RewardIcon'
+export { TimeIcon } from './icons/TimeIcon'
+export { UserIcon } from './icons/UserIcon'
+export { EllipseIcon } from './icons/EllipseIcon'
+export { StarIcon } from './icons/StarIcon'
