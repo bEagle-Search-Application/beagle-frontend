@@ -16,5 +16,5 @@ export { IdeaIcon } from './icons/IdeaIcon'
 export { AddCircleIcon } from './icons/AddCircleIcon'
 export { FilterIcon } from './icons/FilterIcon'
 
-// export { default as GroupIcon } from './icons/Group.svg'
-// export { default as LogoIcon } from './icons/Logo.svg'
+export { default as GroupIcon } from './icons/Group.svg'
+export { default as LogoIcon } from './icons/Logo.svg'
