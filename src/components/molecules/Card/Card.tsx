@@ -17,7 +17,7 @@ interface CardProps {
 
 // TODO: Agregar las propiedades a pasar al componente
 export const Card: FC<CardProps> = ({ title }) => (
-	<div className='max-w-[363px] rounded-3xl border-[1px] border-neutral-300'>
+	<div className='max-w-[363px] rounded-3xl outline outline-1 outline-neutral-300'>
 		<div className='mb-6 relative'>
 			<div className='text-white absolute left-5 top-6'>
 				{/* TODO: Buscado o encontrado dependerá del objeto */}
