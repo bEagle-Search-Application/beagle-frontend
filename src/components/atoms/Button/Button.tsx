@@ -74,7 +74,7 @@ export const Button: FC<ButtonProps> = ({
 }) => (
 	<ButtonContainer size={size} className={className}>
 		{leftIcon && <div className='mr-[10px]'>{leftIcon}</div>}
-		{content}
+		<span>{content}</span>
 		{rightIcon && <div className='ml-[10px]'>{rightIcon}</div>}
 	</ButtonContainer>
 )

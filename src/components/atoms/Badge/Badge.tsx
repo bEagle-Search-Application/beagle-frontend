@@ -3,14 +3,14 @@ import { IconProps } from '../../../interfaces'
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 	content: string
-	size: 'small' | 'medium' | 'large'
+	size: 'small' | 'medium' | 'large' | 'small-overline'
 
 	leftIcon?: ReactElement<IconProps>
 	rightIcon?: ReactElement<IconProps>
 }
 
 interface BadgeContainerProps extends HTMLAttributes<HTMLButtonElement> {
-	size: 'small' | 'medium' | 'large'
+	size: 'small' | 'medium' | 'large' | 'small-overline'
 
 	children: ReactNode
 }
@@ -58,6 +58,19 @@ const BadgeContainer: FC<BadgeContainerProps> = ({
 					{children}
 				</button>
 			)
+
+		case 'small-overline':
+			return (
+				<button
+					className={`py-1 px-3 rounded-lg text-[14px] leading-5 tracking-[1px] font-bold flex items-center ${
+						className || ''
+					}`}
+					{...attributes}
+				>
+					{children}
+				</button>
+			)
+
 		default:
 			return <button>Inserte un contenido...</button>
 	}
