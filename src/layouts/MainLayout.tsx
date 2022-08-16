@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const MainLayout: FC<Props> = ({ children }) => (
-	<>
+	<div className='max-w-[1440px] mx-auto'>
 		<Navbar />
 		<main className='flex'>
 			<div className='max-w-[280px]'>
@@ -18,5 +18,5 @@ export const MainLayout: FC<Props> = ({ children }) => (
 				{children}
 			</div>
 		</main>
-	</>
+	</div>
 )
