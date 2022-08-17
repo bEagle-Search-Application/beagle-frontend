@@ -14,7 +14,7 @@ export const MainLayout: FC<Props> = ({ children }) => (
 			</div>
 			{/* TODO: cambiar el text -left */}
 			{/* TODO: hacer responsive */}
-			<div className='w-full px-4 pb-[124px] border-l border-solid border-neutral-300'>
+			<div className='w-full px-4 border-l border-solid border-neutral-300'>
 				{children}
 			</div>
 		</main>
