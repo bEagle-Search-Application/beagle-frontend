@@ -5,7 +5,7 @@ import { FilterIcon } from '../assets'
 export const Dashboard = () => (
 	<MainLayout>
 		{/* Search Filters */}
-		<div className='mt-[54px]'>
+		<div className='mt-[54px] pb-[124px]'>
 			{/* TODO: Mejorar centro */}
 			<div className='flex gap-60 justify-center mb-10'>
 				<div className='flex-1' />
