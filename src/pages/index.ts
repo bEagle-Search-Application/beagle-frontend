@@ -1,2 +1,3 @@
 export * from './Dashboard'
-export * from './Objeto'
+export * from './InformacionObjeto'
+export * from './Objetos'

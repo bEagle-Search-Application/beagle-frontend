@@ -13,7 +13,7 @@ import {
 import { Badge, Button } from '../components'
 import { MainLayout } from '../layouts'
 
-export const Objeto = () => (
+export const InformacionObjeto = () => (
 	<MainLayout>
 		<div className='pb-4 text-neutral-600'>
 			<div className='mt-10 flex gap-[10px]'>

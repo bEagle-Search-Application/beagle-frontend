@@ -1,6 +1,12 @@
+import { FC } from 'react'
 import { Badge } from '../../atoms'
 
-export const SingleCard = () => (
+interface Props {
+	title: string
+	description: string
+}
+
+export const SingleCard: FC<Props> = ({ title, description }) => (
 	<div className='max-w-[363px] relative'>
 		{/* TODO: Volver responsive */}
 		<div className='bg-gradient-to-b from-transparent via-transparent to-black rounded-xl'>
@@ -21,10 +27,8 @@ export const SingleCard = () => (
 			</div>
 			<div className='text-white p-[26px] absolute -translate-y-full'>
 				<div>
-					<h3 className='text-[32px] leading-9 font-bold'>Bolso beige</h3>
-					<span className='text-[18px] leading-7'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit
-					</span>
+					<h3 className='text-[32px] leading-9 font-bold'>{title}</h3>
+					<span className='text-[18px] leading-7'>{description}</span>
 				</div>
 			</div>
 		</div>
