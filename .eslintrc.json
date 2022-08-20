@@ -36,6 +36,7 @@
 		"react/button-has-type": "off",
 		"react/require-default-props": "off",
 		"react/jsx-props-no-spreading": "off",
-		"@typescript-eslint/no-explicit-any": 1
+		"@typescript-eslint/no-explicit-any": 1,
+		"jsx-a11y/label-has-associated-control": "off"
 	}
 }
