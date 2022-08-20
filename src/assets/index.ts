@@ -22,6 +22,7 @@ export { FacebookIcon } from './icons/FacebookIcon'
 export { InstagramIcon } from './icons/InstagramIcon'
 export { ShareIcon } from './icons/ShareIcon'
 export { WhatsappIcon } from './icons/WhatsappIcon'
+export { DownArrowIcon } from './icons/DownArrowIcon'
 
 export { default as GroupIcon } from './icons/Group.svg'
 export { default as LogoIcon } from './icons/Logo.svg'
