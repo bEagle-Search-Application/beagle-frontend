@@ -17,7 +17,7 @@ interface CardProps {
 
 // TODO: Agregar las propiedades a pasar al componente
 export const Card: FC<CardProps> = ({ title }) => (
-	<div className='max-w-[363px] rounded-3xl outline outline-1 outline-neutral-300'>
+	<div className='flex flex-col min-w-[363px] max-w-[450px] rounded-3xl outline outline-1 outline-neutral-300'>
 		<div className='mb-6 relative'>
 			<div className='text-white absolute left-5 top-6'>
 				{/* TODO: Buscado o encontrado dependerá del objeto */}
@@ -28,14 +28,14 @@ export const Card: FC<CardProps> = ({ title }) => (
 				/>
 			</div>
 			<img
-				className='h-72 rounded-3xl object-cover'
+				className='rounded-3xl object-cover'
 				src='https://images.unsplash.com/photo-1589578230792-919e176e2243?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 				alt='About'
 			/>
 		</div>
 		<div className='px-[26px] flex flex-col gap-8 items-center'>
 			<div>
-				<h6 className='text-neutral-900 font-bold text-[20px] leading-6'>
+				<h6 className='text-neutral-900 text-center font-bold text-[20px] leading-6'>
 					{/* TODO: Dinamizar el título */}
 					{title}
 				</h6>
