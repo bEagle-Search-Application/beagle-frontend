@@ -64,6 +64,9 @@ module.exports = {
 				'error-800': '#991B1B',
 				'error-900': '#7F1D1D',
 			},
+			screens: {
+				desktop: '1440px',
+			},
 		},
 	},
 	plugins: [],
