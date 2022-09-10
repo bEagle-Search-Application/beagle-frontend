@@ -6,6 +6,7 @@ import {
 	Objects,
 	Settings,
 	SearchResults,
+	PostLostObject,
 } from './pages'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 			{/* TODO: Se necesita una cuenta para ver estas páginas */}
 			<Route path='/mis-perdidos' element={<Objects />} />
 			<Route path='/mis-encontrados' element={<Objects />} />
+			<Route path='/publicar-objeto-perdido' element={<PostLostObject />} />
 
 			<Route path='/ayuda' element={<HelpPage />} />
 			<Route path='/configuraciones' element={<Settings />} />
