@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Dashboard, HelpPage, InformacionObjeto, Objetos } from './pages'
+import { Dashboard, HelpPage, AboutTheObject, Objects } from './pages'
 
 function App() {
 	return (
@@ -7,11 +7,11 @@ function App() {
 			<Route path='/' element={<Dashboard />} />
 			{/* TODO: Arreglar el nombre */}
 
-			<Route path='/informacion-del-objeto' element={<InformacionObjeto />} />
+			<Route path='/informacion-del-objeto' element={<AboutTheObject />} />
 
 			{/* TODO: Dinamizar mis objetos perdidos/encontrados */}
-			<Route path='/mis-perdidos' element={<Objetos />} />
-			<Route path='/mis-encontrados' element={<Objetos />} />
+			<Route path='/mis-perdidos' element={<Objects />} />
+			<Route path='/mis-encontrados' element={<Objects />} />
 
 			<Route path='/ayuda' element={<HelpPage />} />
 
