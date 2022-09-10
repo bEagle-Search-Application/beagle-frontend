@@ -24,10 +24,10 @@ export const Dashboard = () => (
 						<button>Personas</button>
 					</div>
 				</div>
-				<div className=''>
+				<div className='flex-1'>
 					{/* TODO: Hover */}
 					<Button
-						className='text-neutral-600 hover:bg-neutral-100'
+						className='text-neutral-600 hover:bg-neutral-100 ml-auto'
 						size='medium'
 						content='Filtros'
 						leftIcon={<FilterIcon size={20} stroke='#4B5563' />}
