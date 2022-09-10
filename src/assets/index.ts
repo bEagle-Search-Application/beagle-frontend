@@ -24,6 +24,13 @@ export { ShareIcon } from './icons/ShareIcon'
 export { WhatsappIcon } from './icons/WhatsappIcon'
 export { DownArrowIcon } from './icons/DownArrowIcon'
 export { ImageIcon } from './icons/ImageIcon'
+export { FrowningFaceIcon } from './icons/FrowningFaceIcon'
+export { SmileyFaceIcon } from './icons/SmileyFaceIcon'
+export { PolygonsIcon } from './icons/PolygonsIcon'
+export { DogFaceIcon } from './icons/DogFaceIcon'
+export { PhoneIcon } from './icons/PhoneIcon'
+export { UpArrowIcon } from './icons/UpArrowIcon'
+export { CancelIcon } from './icons/CancelIcon'
 
 // TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
 export { default as GroupIcon } from './icons/Group.svg'
