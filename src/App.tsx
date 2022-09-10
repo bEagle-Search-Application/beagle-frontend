@@ -7,6 +7,7 @@ import {
 	Settings,
 	SearchResults,
 	PostLostObject,
+	MyProfile,
 } from './pages'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
 
 			<Route path='/ayuda' element={<HelpPage />} />
 			<Route path='/configuraciones' element={<Settings />} />
+			<Route path='/mi-perfil' element={<MyProfile />} />
 
 			<Route path='*' element={<h1>Introduzca una ruta correcta</h1>} />
 		</Routes>
