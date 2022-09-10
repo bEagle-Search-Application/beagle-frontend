@@ -1,4 +1,4 @@
 export * from './Dashboard'
-export * from './InformacionObjeto'
-export * from './Objetos'
+export * from './AboutTheObject'
+export * from './Objects'
 export * from './HelpPage'
