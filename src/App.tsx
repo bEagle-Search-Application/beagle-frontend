@@ -1,5 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
-import { Dashboard, HelpPage, AboutTheObject, Objects, Settings } from './pages'
+import {
+	Dashboard,
+	HelpPage,
+	AboutTheObject,
+	Objects,
+	Settings,
+	SearchResults,
+} from './pages'
 
 function App() {
 	return (
@@ -8,6 +15,7 @@ function App() {
 			{/* TODO: Arreglar el nombre */}
 
 			<Route path='/informacion-del-objeto' element={<AboutTheObject />} />
+			<Route path='/resultados' element={<SearchResults />} />
 
 			{/* TODO: Dinamizar mis objetos perdidos/encontrados */}
 			{/* TODO: Se necesita una cuenta para ver estas páginas */}
