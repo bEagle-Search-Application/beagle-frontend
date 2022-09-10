@@ -23,6 +23,8 @@ export { InstagramIcon } from './icons/InstagramIcon'
 export { ShareIcon } from './icons/ShareIcon'
 export { WhatsappIcon } from './icons/WhatsappIcon'
 export { DownArrowIcon } from './icons/DownArrowIcon'
+export { ImageIcon } from './icons/ImageIcon'
 
+// TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
 export { default as GroupIcon } from './icons/Group.svg'
 export { default as LogoIcon } from './icons/Logo.svg'
