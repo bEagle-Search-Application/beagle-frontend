@@ -82,6 +82,7 @@ export const Sidebar = () => (
 				</div>
 
 				<div>
+          {/* TODO: Necesitar estar logeado para ver el ícono de configuraciones */}
 					<div className='px-8 py-5 cursor-pointer transition ease-in duration-150 hover:bg-primary-100 active:bg-primary-100'>
 						<Option
 							label='Configuraciones'
