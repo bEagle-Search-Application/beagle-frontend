@@ -22,7 +22,7 @@ export const Input: FC<InputProps> = ({
 }) => (
 	<>
 		<div
-			className={`text-sm flex items-center px-2 py-2.5 max-w-sm rounded-xl ${className}`}
+			className={`text-sm flex items-center px-2 py-2.5 rounded-xl ${className}`}
 		>
 			{leftIcon && <div className='flex'>{leftIcon}</div>}
 			<input
