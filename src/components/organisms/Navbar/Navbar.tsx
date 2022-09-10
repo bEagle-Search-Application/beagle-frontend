@@ -11,7 +11,7 @@ export const Navbar = () => (
 			</div>
 			<div className='w-[375px]'>
 				<Input
-					className='bg-neutral-100'
+					className='bg-neutral-100 max-w-sm'
 					leftIcon={<SearchIcon size={20} stroke='#4B5563' />}
 					placeholder='Busca mascotas, objetos o personas...'
 				/>
