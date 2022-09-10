@@ -31,14 +31,17 @@ export const HelpPage = () => (
 								<span className='text-neutral-600 text-sm font-bold'>
 									Nombre de usuario
 								</span>
-								<Input className='bg-neutral-100' placeholder='pepeargento' />
+								<Input
+									className='bg-neutral-100 max-w-sm'
+									placeholder='pepeargento'
+								/>
 							</div>
 							<div>
 								<span className='text-neutral-600 text-sm font-bold'>
 									Email
 								</span>
 								<Input
-									className='bg-neutral-100'
+									className='bg-neutral-100 max-w-sm'
 									placeholder='pepeargento@gmail.com'
 								/>
 							</div>
@@ -84,7 +87,7 @@ export const HelpPage = () => (
 							</div>
 						</div>
 
-						<div className='mt-[40px] flex justify-between'>
+						<div className='mt-[40px] flex justify-between items-center'>
 							<div>
 								{/* TODO: Preguntar el color del hover y active */}
 								<Button
