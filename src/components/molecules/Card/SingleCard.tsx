@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const SingleCard: FC<Props> = ({ title, description }) => (
-	<div className='max-w-[363px] relative'>
+	<div className='min-w-[363px] max-w-[450px] relative'>
 		{/* TODO: Volver responsive */}
 		<div className='bg-gradient-to-b from-transparent via-transparent to-black rounded-xl'>
 			<div className='relative -z-10'>
