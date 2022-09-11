@@ -66,6 +66,7 @@ module.exports = {
 			},
 			screens: {
 				desktop: '1440px',
+				ultrawide: '1824px',
 			},
 		},
 	},
