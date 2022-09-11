@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ExtraCard: FC<Props> = ({ title, description, author }) => (
-	<div className='max-w-[346px] rounded-2xl border-[1px] border-neutral-300'>
+	<div className='max-w-[346px] rounded-2xl bg-neutral-100 border-[1px] border-neutral-300'>
 		<div className='p-8 flex flex-col justify-center items-center gap-8'>
 			<div className='flex justify-center'>
 				{/* TODO: Dinamizar el alt de la img */}
