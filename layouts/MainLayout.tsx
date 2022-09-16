@@ -1,14 +1,42 @@
-import { FC, ReactNode, useContext } from 'react'
-import { CancelIcon, SmileIcon, SmileyFaceIcon } from '../assets'
-import { Input, LabelInput, Navbar, Sidebar } from '../components'
+import { FC, FormEvent, ReactNode, useContext, useState } from 'react'
+import {
+  CancelIcon,
+  FacebookCustomIcon,
+  FacebookIcon,
+  GoogleCustomIcon,
+  IdeaIcon,
+  SmileIcon,
+  SmileyFaceIcon,
+  TwitterCustomIcon,
+} from '../assets'
+import {
+  Button,
+  Input,
+  LabelInput,
+  LogIn,
+  Navbar,
+  Register,
+  Sidebar,
+} from '../components'
 import { UIContext } from '../context'
 
 interface Props {
   children: ReactNode
 }
 
+type ModalProps = 'login' | 'register'
+
 export const MainLayout: FC<Props> = ({ children }) => {
-  const { state } = useContext(UIContext)
+  const { state, handleCloseModal } = useContext(UIContext)
+  const [whichModal, setWhichModal] = useState<ModalProps>('login')
+
+  const handleModal = (modal: ModalProps) => {
+    setWhichModal(modal)
+  }
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
 
   return (
     <div className='mx-auto'>
@@ -27,38 +55,18 @@ export const MainLayout: FC<Props> = ({ children }) => {
       {state.modalIsOpen && (
         <div className='fixed top-0 w-full h-screen backdrop-blur bg-neutral-900/40'>
           <div className='max-w-md bg-white relative mx-auto top-[50%] translate-y-[-50%] rounded-xl'>
-            <div className='flex justify-end pt-4 pr-5'>
-              <CancelIcon size={16} stroke='#9CA3AF' />
-            </div>
-            <div className='mt-4 flex flex-col gap-8'>
-              <div className='flex flex-col items-center gap-4'>
-                {/* TODO: Usar el ícono que esta en figma */}
-                <div className='text-center'>
-                  <SmileIcon size={20} stroke='#9CA3AF' />
-                </div>
-                <h5 className='text-neutral-900 text-[24px] leading-7 font-bold'>
-                  Que bueno tenerte de vuelta!
-                </h5>
-              </div>
-              <form className='w-full px-8 text-sm'>
-                <div className='flex flex-col gap-1'>
-                  <span className='text-neutral-600 font-bold'>Email</span>
-                  <Input
-                    className='bg-neutral-100'
-                    placeholder='Escribe tu email aquí'
-                  />
-                </div>
-                <div className='mt-4 flex flex-col gap-1'>
-                  <span className='text-neutral-600 font-bold'>Contraseña</span>
-                  <Input className='bg-neutral-100' />
-                  <span className='mx-3 my-[6px] text-primary-500 text-xs'>
-                    ¿Olvidaste tu contraseña?
-                  </span>
-                </div>
-                {/* TODO: Button iniciar sesion */}
-                <div></div>
-              </form>
-            </div>
+            {/* LOGIN */}
+            <LogIn
+              whichModal={whichModal}
+              handleModal={handleModal}
+              handleCloseModal={handleCloseModal}
+            />
+            {/* REGISTER */}
+            <Register
+              whichModal={whichModal}
+              handleModal={handleModal}
+              handleCloseModal={handleCloseModal}
+            />
           </div>
         </div>
       )}
