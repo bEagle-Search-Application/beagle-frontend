@@ -32,6 +32,7 @@ export { PhoneIcon } from './icons/PhoneIcon'
 export { UpArrowIcon } from './icons/UpArrowIcon'
 export { CancelIcon } from './icons/CancelIcon'
 
+export * from './icons/custom'
 // TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
 export { default as GroupIcon } from './icons/Group.svg'
 export { default as LogoIcon } from './icons/Logo.svg'
