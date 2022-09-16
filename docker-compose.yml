@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    container_name: node
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    user: ${USER_ID}
