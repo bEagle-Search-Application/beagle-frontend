@@ -1,4 +1,6 @@
 import { FC, FormEvent } from 'react'
+
+import { Input, Button } from '../../atoms'
 import {
   CancelIcon,
   FacebookIcon,
@@ -6,20 +8,14 @@ import {
   SmileIcon,
   TwitterCustomIcon,
 } from '../../../assets'
-import { Input, Button } from '../../atoms'
+import { ITypeOfModals } from '../../../interfaces'
 
 interface Props {
-  whichModal: 'login' | 'register'
-
-  handleModal: (arg: 'login' | 'register') => void
+  handleOpenModal: (arg: ITypeOfModals) => void
   handleCloseModal: () => void
 }
 
-export const LogIn: FC<Props> = ({
-  whichModal,
-  handleModal,
-  handleCloseModal,
-}) => {
+export const LogIn: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
   //TODO: Arreglar el orden y las importanciones, tratar de reducir en lo posible estos imports
   //TODO: Tratar de deshacernos de este handle. No es necesario
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -27,9 +23,9 @@ export const LogIn: FC<Props> = ({
   }
 
   return (
-    <div className={whichModal === 'login' ? '' : 'hidden'}>
+    <div className='w-[439px] max-w-md'>
       <div className='flex justify-end pt-4 pb-2 pr-5'>
-        <div onClick={handleCloseModal}>
+        <div className='cursor-pointer' onClick={handleCloseModal}>
           <CancelIcon size={16} stroke='#9CA3AF' />
         </div>
       </div>
@@ -64,12 +60,13 @@ export const LogIn: FC<Props> = ({
               size='medium'
               content='Iniciar sesión'
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
+              // onClick=
             />
             {/* TODO: Hover y active */}
             <Button
               size='medium'
               content='Crear cuenta'
-              onClick={() => handleModal('register')}
+              onClick={() => handleOpenModal('register')}
               className='w-full justify-center text-neutral-600 hover:bg-neutral-100 active:bg-neutral-300'
             />
           </div>

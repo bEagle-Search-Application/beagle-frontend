@@ -1,4 +1,6 @@
-import React, { FC, FormEvent } from 'react'
+import { FC, FormEvent, useState } from 'react'
+
+import { Input, LabelInput, Button } from '../../atoms'
 import {
   CancelIcon,
   SmileyFaceIcon,
@@ -7,29 +9,26 @@ import {
   FacebookIcon,
   TwitterCustomIcon,
 } from '../../../assets'
-import { Input, LabelInput, Button } from '../../atoms'
+import { ITypeOfModals } from '../../../interfaces'
 
 interface Props {
-  whichModal: 'login' | 'register'
-
-  handleModal: (arg: 'login' | 'register') => void
+  handleOpenModal: (arg: ITypeOfModals) => void
   handleCloseModal: () => void
 }
 
-export const Register: FC<Props> = ({
-  whichModal,
-  handleModal,
-  handleCloseModal,
-}) => {
+export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
+  const [isValidData, setIsValidData] = useState(false)
   //TODO: Arreglar el orden y las importanciones, tratar de reducir en lo posible estos imports
   //TODO: Tratar de deshacernos de este handle. No es necesario
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsValidData(true)
   }
+
   return (
-    <div className={whichModal === 'register' ? '' : 'hidden'}>
+    <div className='w-[439px]'>
       <div className='flex justify-end pt-4 pb-2 pr-5'>
-        <div onClick={handleCloseModal}>
+        <div className='cursor-pointer' onClick={handleCloseModal}>
           <CancelIcon size={16} stroke='#9CA3AF' />
         </div>
       </div>
@@ -104,19 +103,20 @@ export const Register: FC<Props> = ({
               </span>
             </label>
           </div>
-          {/* TODO: Button iniciar sesion */}
+          {/* TODO: Button continuar */}
           <div className='mt-8 flex flex-col gap-3'>
             <Button
               size='medium'
               content='Continuar'
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
+              onClick={() => handleOpenModal('message-code')}
             />
             {/* TODO: Hover y active */}
             <Button
               size='medium'
               content='Ya tengo una cuenta'
-              onClick={() => handleModal('login')}
               className='w-full justify-center text-neutral-600 hover:bg-neutral-100 active:bg-neutral-300'
+              onClick={() => handleOpenModal('login')}
             />
           </div>
         </form>
