@@ -31,6 +31,9 @@ export { DogFaceIcon } from './icons/DogFaceIcon'
 export { PhoneIcon } from './icons/PhoneIcon'
 export { UpArrowIcon } from './icons/UpArrowIcon'
 export { CancelIcon } from './icons/CancelIcon'
+export { KeyIcon } from './icons/KeyIcon'
+export { QuestionHelpIcon } from './icons/QuestionHelpIcon'
+export { SuccessCheckIcon } from './icons/SuccessCheckIcon'
 
 export * from './icons/custom'
 // TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
