@@ -1,22 +1,26 @@
 import { FC, ReactNode, useReducer } from 'react'
 import { UIContext, uiReducer } from './'
+import { ITypeOfModals } from '../../interfaces'
 
 interface UIProviderProps {
   children: ReactNode
 }
 
 export interface InitialStateUIProps {
+  whichModal: ITypeOfModals
   modalIsOpen: boolean
 }
 
 const INITIAL_STATE_UI: InitialStateUIProps = {
+  whichModal: 'login',
   modalIsOpen: false,
 }
 
 export const UIProvider: FC<UIProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_STATE_UI)
 
-  const handleOpenModal = () => dispatch({ type: '[UI] - OPEN_MODAL' })
+  const handleOpenModal = (modalToOpen: ITypeOfModals) =>
+    dispatch({ type: '[UI] - OPEN_MODAL', payload: modalToOpen })
   const handleCloseModal = () => dispatch({ type: '[UI] - CLOSE_MODAL' })
 
   return (

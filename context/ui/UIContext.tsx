@@ -1,10 +1,11 @@
 import { createContext } from 'react'
 import { InitialStateUIProps } from './'
+import { ITypeOfModals } from '../../interfaces'
 
 interface UIContextProps {
   state: InitialStateUIProps
 
-  handleOpenModal: () => void
+  handleOpenModal: (arg: ITypeOfModals) => void
   handleCloseModal: () => void
 }
 
