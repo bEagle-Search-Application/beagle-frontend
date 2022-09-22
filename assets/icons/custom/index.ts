@@ -1,3 +1,5 @@
+export * from './DogCustomIcon'
 export * from './FacebookCustomIcon'
 export * from './GoogleCustomIcon'
 export * from './TwitterCustomIcon'
+export * from './LogoCustomIcon'
