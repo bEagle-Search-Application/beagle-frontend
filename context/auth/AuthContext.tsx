@@ -1,3 +1,10 @@
-import React from 'react'
+import { createContext } from 'react'
+import { IUser } from '../../interfaces'
 
-export const AuthContext = () => <div>AuthContext</div>
+interface ContextProps {
+  isAuthenticated: boolean
+  user?: IUser
+  loginUser: (email: string, password: string) => Promise<boolean>
+}
+
+export const AuthContext = createContext({} as ContextProps)
