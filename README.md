@@ -3,7 +3,7 @@
 1. Download the directory
 2. Change into the project directory and open ur terminal
 3. Run the following command <code>npm install</code>
-4. Finally run <code>npm dev</code> to start the project
+4. Finally run <code>npm run dev</code> to start the project
 
 # Pages
 
