@@ -1,4 +1,4 @@
-import { FC, FormEvent, useState } from 'react'
+import { FC, FormEvent, useContext } from 'react'
 
 import { Input, LabelInput, Button } from '../../atoms'
 import {
@@ -9,20 +9,26 @@ import {
   FacebookIcon,
   TwitterCustomIcon,
 } from '../../../assets'
-import { ITypeOfModals } from '../../../interfaces'
+import { useForm } from '../../../hooks'
+import { UIContext } from '../../../context'
 
-interface Props {
-  handleOpenModal: (arg: ITypeOfModals) => void
-  handleCloseModal: () => void
+const INITIAL_VALUES_REGISTER_FORM = {
+  name: '',
+  surname: '',
+  email: '',
+  password: '',
+  phone: 0,
 }
 
-export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
-  const [isValidData, setIsValidData] = useState(false)
-  //TODO: Arreglar el orden y las importanciones, tratar de reducir en lo posible estos imports
-  //TODO: Tratar de deshacernos de este handle. No es necesario
+export const Register: FC = () => {
+  // const [buttonDisabled, setButtonDisabled] = useState(true)
+  const { handleOpenModal, handleCloseModal } = useContext(UIContext)
+  const { formValues, handleChange } = useForm(INITIAL_VALUES_REGISTER_FORM)
+  const { name, surname, email, password, phone } = formValues
+
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsValidData(true)
+    // setButtonDisabled(false)
   }
 
   return (
@@ -49,6 +55,9 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
               <Input
                 className='bg-neutral-100'
                 placeholder='Escribe tu nombre aquí'
+                name='name'
+                onChange={handleChange}
+                value={name}
               />
             </div>
             <div className='flex-1 flex-col gap-1'>
@@ -56,6 +65,9 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
               <Input
                 className='bg-neutral-100'
                 placeholder='Escribe tu apellido aquí'
+                name='surname'
+                onChange={handleChange}
+                value={surname}
               />
             </div>
           </div>
@@ -64,13 +76,20 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
             <Input
               className='bg-neutral-100'
               placeholder='Escribe tu email aquí'
+              name='email'
+              onChange={handleChange}
+              value={email}
             />
           </div>
           <div className='mt-4 flex flex-col gap-1'>
             <span className='text-neutral-600 font-bold'>Contraseña</span>
             <Input
+              type='password'
               className='bg-neutral-100'
               placeholder='Escribe tu contraseña aquí'
+              name='password'
+              onChange={handleChange}
+              value={password}
             />
             <LabelInput
               type='primary'
@@ -83,12 +102,16 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
               Número de teléfono
             </span>
             <Input
+              type='number'
               className='bg-neutral-100'
               placeholder='Escribe tu número de teléfono aquí'
+              name='phone'
+              onChange={handleChange}
+              value={phone}
             />
           </div>
           <div className='mt-4 flex flex-col gap-3 text-xs text-neutral-600'>
-            <label className='flex items-center gap-1'>
+            <label className='w-fit flex items-center gap-1'>
               <input type='checkbox' />
               <span>
                 Acepto los{' '}
@@ -96,7 +119,7 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
                 bEagle.inc
               </span>
             </label>
-            <label className='flex items-center gap-1'>
+            <label className='w-fit flex items-center gap-1'>
               <input type='checkbox' />
               <span>
                 No deseo recibir emails, promociones, beneficios, o NFTs.
@@ -109,7 +132,8 @@ export const Register: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
               size='medium'
               content='Continuar'
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
-              onClick={() => handleOpenModal('message-code')}
+              onClick={() => handleOpenModal('account-created')}
+              // disabled={buttonDisabled}
             />
             {/* TODO: Hover y active */}
             <Button
