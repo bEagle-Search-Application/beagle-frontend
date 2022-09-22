@@ -3,7 +3,7 @@ import { FC, ReactNode, useContext } from 'react'
 import {
   AccountCreated,
   LogIn,
-  MessageCode,
+  // MessageCode,
   Navbar,
   Register,
   Sidebar,
@@ -16,50 +16,27 @@ interface Props {
 }
 
 export const MainLayout: FC<Props> = ({ children }) => {
-  const { state, handleOpenModal, handleCloseModal } = useContext(UIContext)
+  const { state } = useContext(UIContext)
 
   const RenderAccountModal = (modal: ITypeOfModals) => {
     switch (modal) {
       case 'login':
-        return (
-          <LogIn
-            handleCloseModal={handleCloseModal}
-            handleOpenModal={handleOpenModal}
-          />
-        )
+        return <LogIn />
 
       case 'register':
-        return (
-          <Register
-            handleCloseModal={handleCloseModal}
-            handleOpenModal={handleOpenModal}
-          />
-        )
-
-      case 'message-code':
-        return (
-          <MessageCode
-            handleCloseModal={handleCloseModal}
-            handleOpenModal={handleOpenModal}
-          />
-        )
+        return <Register />
 
       case 'account-created':
-        return <AccountCreated handleCloseModal={handleCloseModal} />
+        return <AccountCreated />
 
       default:
-        return (
-          <LogIn
-            handleCloseModal={handleCloseModal}
-            handleOpenModal={handleOpenModal}
-          />
-        )
+        return <LogIn />
     }
   }
 
   return (
     <div className='mx-auto'>
-      <Navbar handleOpenModal={handleOpenModal} />
+      <Navbar />
       <main className='flex'>
         <div className='max-w-[280px]'>
           <Sidebar />
