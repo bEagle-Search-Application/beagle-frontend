@@ -1,4 +1,5 @@
-import { FC, FormEvent } from 'react'
+import { FC, FormEvent, useContext, useState } from 'react'
+import { useRouter } from 'next/router'
 
 import { Input, Button } from '../../atoms'
 import {
@@ -8,18 +9,41 @@ import {
   SmileIcon,
   TwitterCustomIcon,
 } from '../../../assets'
-import { ITypeOfModals } from '../../../interfaces'
+import { useForm } from '../../../hooks'
+import { AuthContext, UIContext } from '../../../context'
 
-interface Props {
-  handleOpenModal: (arg: ITypeOfModals) => void
-  handleCloseModal: () => void
+const INITIAL_VALUES_REGISTER_FORM = {
+  email: '',
+  password: '',
 }
 
-export const LogIn: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
-  //TODO: Arreglar el orden y las importanciones, tratar de reducir en lo posible estos imports
-  //TODO: Tratar de deshacernos de este handle. No es necesario
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+export const LogIn: FC = () => {
+  const router = useRouter()
+  const { loginUser } = useContext(AuthContext)
+  const { handleOpenModal, handleCloseModal } = useContext(UIContext)
+  const [buttonDisabled, setButtonDisabled] = useState(false)
+  const { formValues, handleChange } = useForm(INITIAL_VALUES_REGISTER_FORM)
+  const { email, password } = formValues
+
+  // TODO: Validar campos del formulario
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setButtonDisabled(true)
+
+    const isValidLogin = await loginUser(email, password)
+    const { redirect = '' } = router.query
+
+    if (!isValidLogin) {
+      //TODO: Manejo de errores
+      setButtonDisabled(false)
+      return alert('Usuario o contraseña incorrectos')
+    }
+
+    handleCloseModal()
+
+    if (!!redirect) {
+      return router.push(redirect as string)
+    }
   }
 
   return (
@@ -45,11 +69,20 @@ export const LogIn: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
             <Input
               className='bg-neutral-100'
               placeholder='Escribe tu email aquí'
+              name='email'
+              value={email}
+              onChange={handleChange}
             />
           </div>
           <div className='mt-4 flex flex-col gap-1'>
             <span className='text-neutral-600 font-bold'>Contraseña</span>
-            <Input className='bg-neutral-100' />
+            <Input
+              type='password'
+              className='bg-neutral-100'
+              name='password'
+              value={password}
+              onChange={handleChange}
+            />
             <span className='mx-3 my-[6px] text-primary-500 text-xs'>
               ¿Olvidaste tu contraseña?
             </span>
@@ -57,10 +90,11 @@ export const LogIn: FC<Props> = ({ handleOpenModal, handleCloseModal }) => {
           {/* TODO: Button iniciar sesion */}
           <div className='mt-8 flex flex-col gap-3'>
             <Button
+              type='submit'
               size='medium'
               content='Iniciar sesión'
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
-              // onClick=
+              disabled={buttonDisabled}
             />
             {/* TODO: Hover y active */}
             <Button
