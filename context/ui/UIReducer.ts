@@ -1,4 +1,4 @@
-import { InitialStateUIProps } from './'
+import { UIState } from './'
 import { ITypeOfModals } from '../../interfaces'
 
 type ActionProps =
@@ -10,7 +10,7 @@ type ActionProps =
       type: '[UI] - CLOSE_MODAL'
     }
 
-export const uiReducer = (state: InitialStateUIProps, action: ActionProps) => {
+export const uiReducer = (state: UIState, action: ActionProps): UIState => {
   switch (action.type) {
     case '[UI] - OPEN_MODAL':
       return { ...state, modalIsOpen: true, whichModal: action.payload }

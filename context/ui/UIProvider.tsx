@@ -6,12 +6,12 @@ interface UIProviderProps {
   children: ReactNode
 }
 
-export interface InitialStateUIProps {
+export interface UIState {
   whichModal: ITypeOfModals
   modalIsOpen: boolean
 }
 
-const INITIAL_STATE_UI: InitialStateUIProps = {
+const INITIAL_STATE_UI: UIState = {
   whichModal: 'login',
   modalIsOpen: false,
 }
