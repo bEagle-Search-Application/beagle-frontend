@@ -1,17 +1,13 @@
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 
 import { Input, Button } from '../../atoms'
 import { PopUp } from '../../molecules'
 
 import { KeyIcon, QuestionHelpIcon } from '../../../assets'
-import { ITypeOfModals } from '../../../interfaces'
+import { UIContext } from '../../../context'
 
-interface Props {
-  handleOpenModal: (arg: ITypeOfModals) => void
-  handleCloseModal: () => void
-}
-
-export const MessageCode: FC<Props> = ({ handleOpenModal }) => {
+export const MessageCode: FC = () => {
+  const { handleOpenModal } = useContext(UIContext)
   const [isHovered, setIsHovered] = useState(false)
 
   return (
