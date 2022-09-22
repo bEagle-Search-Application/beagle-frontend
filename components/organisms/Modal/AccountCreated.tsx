@@ -1,12 +1,11 @@
 import { Button } from '../../atoms'
 import { SuccessCheckIcon, CancelIcon } from '../../../assets'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
+import { UIContext } from '../../../context'
 
-interface Props {
-  handleCloseModal: () => void
-}
+export const AccountCreated: FC = () => {
+  const { handleCloseModal } = useContext(UIContext)
 
-export const AccountCreated: FC<Props> = ({ handleCloseModal }) => {
   return (
     <div className='w-[462px] mx-auto p-8'>
       <div className='flex flex-col gap-8'>
