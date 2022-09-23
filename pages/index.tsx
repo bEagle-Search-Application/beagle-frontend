@@ -41,6 +41,17 @@ const Dashboard: NextPage = () => {
           <div>
             <div>
               <h4 className='text-[28px] leading-8 font-bold text-left'>
+                Búsquedas recientes
+              </h4>
+              <div className='mt-4'>
+                <div className='bg-gradient-to-r from-[#8074C6] to-[#4B4183]'></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <h4 className='text-[28px] leading-8 font-bold text-left'>
                 Encontrados
               </h4>
             </div>
@@ -48,7 +59,6 @@ const Dashboard: NextPage = () => {
               <GridCard />
             </div>
           </div>
-
           <div>
             <div>
               <h4 className='text-[28px] leading-8 font-bold text-left'>
