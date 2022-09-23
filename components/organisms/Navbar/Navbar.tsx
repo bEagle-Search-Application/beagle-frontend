@@ -1,20 +1,22 @@
-import { FC, useContext } from 'react'
-import Image from 'next/image'
+import { FC, useContext, useState } from 'react'
 import NextLink from 'next/link'
 
 import { Input, Button } from '../../atoms'
+
+import { AuthContext, UIContext } from '../../../context'
 import {
+  LogoCustomIcon,
+  SearchIcon,
   BellIcon,
   ContactIcon,
   DownArrowIcon,
-  LogoCustomIcon,
-  SearchIcon,
 } from '../../../assets'
-import { AuthContext, UIContext } from '../../../context'
+import { DropDown } from '../../molecules'
 
 export const Navbar: FC = () => {
   const { isAuthenticated, user } = useContext(AuthContext)
   const { handleOpenModal } = useContext(UIContext)
+  const [showDropdown, setShowDropdown] = useState(false)
 
   return (
     <nav className='px-8 py-4 border-b-[1px] border-solid border-neutral-300'>
@@ -42,16 +44,22 @@ export const Navbar: FC = () => {
                 <ContactIcon size={20} stroke='#4B5563' />
               </div>
             </div>
-            <div className='flex gap-2 items-center'>
+            <div className='relative'>
               {/* TODO: Imagen a configurar del perfil */}
-              <img
-                className='w-8 h-8 object-fill rounded-full'
-                src='https://images.unsplash.com/photo-1589578230792-919e176e2243?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-                alt={`Foto de perfil de ${user?.name} ${user?.surname}`}
-              />
-              <div className='px-[6px] py-[9px] cursor-pointer'>
-                <DownArrowIcon size={16} stroke='#4B5563' />
+              <div
+                className='flex gap-2 items-center cursor-pointer'
+                onClick={() => setShowDropdown((state) => !state)}
+              >
+                <img
+                  className='w-8 h-8 object-fill rounded-full'
+                  src='https://images.unsplash.com/photo-1589578230792-919e176e2243?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+                  alt={`Foto de perfil de ${user?.name} ${user?.surname}`}
+                />
+                <div className='px-[6px] py-[9px]'>
+                  <DownArrowIcon size={16} stroke='#4B5563' />
+                </div>
               </div>
+              {showDropdown && <DropDown />}
             </div>
           </div>
         ) : (
