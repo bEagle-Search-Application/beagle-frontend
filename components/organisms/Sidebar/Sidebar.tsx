@@ -34,10 +34,13 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className='pt-5 max-h-[860px] h-[calc(100vh_-_90px)] flex flex-col justify-between text-lg'>
+    <div className='pt-5 max-h-[860px] h-[calc(100vh_-_90px)] flex flex-col justify-between text-lg select-none'>
       <div>
         {!!user ? (
-          <div className='ml-8 mr-20 mb-6 flex items-center gap-3 w-max'>
+          <div
+            className='ml-8 mr-20 mb-6 flex items-center gap-3 w-max cursor-pointer'
+            onClick={() => router.push('/mi-perfil')}
+          >
             <div className='flex'>
               {/* TODO: Dinamizar img  y arreglar alt */}
               {/* TODO: Dinamizar alto y ancho */}
