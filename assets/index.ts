@@ -39,6 +39,7 @@ export { UserOutlinedIcon } from './icons/UserOutlinedIcon'
 export { RightArrowIcon } from './icons/RightArrowIcon'
 export { ExitAppIcon } from './icons/ExitAppIcon'
 export { GiveHelpIcon } from './icons/GiveHelpIcon'
+export { WarningIcon } from './icons/WarningIcon'
 
 export * from './icons/custom'
 // TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
