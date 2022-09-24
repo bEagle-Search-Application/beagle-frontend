@@ -1,7 +1,9 @@
-import { FC, useContext, useState } from 'react'
+import { FC, useContext, useRef, useState } from 'react'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
 import { Input, Button } from '../../atoms'
+import { Collapse, Dropdown } from '../../molecules'
 
 import { AuthContext, UIContext } from '../../../context'
 import {
@@ -11,13 +13,22 @@ import {
   ContactIcon,
   DownArrowIcon,
 } from '../../../assets'
-import { DropDown } from '../../molecules'
+import { useClickOutside } from '../../../hooks'
 
 export const Navbar: FC = () => {
   const { isAuthenticated, user } = useContext(AuthContext)
+  const router = useRouter()
   const { handleOpenModal } = useContext(UIContext)
   const [showDropdown, setShowDropdown] = useState(false)
+  const [showMail, setShowMail] = useState(false)
 
+  const dropdownFocus = useRef<HTMLDivElement>(null)
+  const collapseFocus = useRef<HTMLDivElement>(null)
+  useClickOutside(dropdownFocus, () => setShowDropdown(false))
+  useClickOutside(collapseFocus, () => setShowMail(false))
+
+  //TODO: Al hacer hover en los espacios en blanco se puede redirigir a la página de configuraciones y cerrar sesión
+  //TODO: Arreglar eso
   return (
     <nav className='px-8 py-4 border-b-[1px] border-solid border-neutral-300'>
       <div className='flex justify-between items-center'>
@@ -37,18 +48,33 @@ export const Navbar: FC = () => {
         {isAuthenticated ? (
           <div className='flex gap-11'>
             <div className='flex gap-[13px] items-center'>
-              <div className='px-[3px] py-[2px] cursor-pointer'>
+              <div
+                className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
+                onClick={() => setShowMail(!showMail)}
+              >
                 <BellIcon size={20} stroke='#4B5563' />
               </div>
-              <div className='px-[3px] py-[2px] cursor-pointer'>
+              <div
+                className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
+                onClick={() => router.push('/mensajeria')}
+              >
                 <ContactIcon size={20} stroke='#4B5563' />
               </div>
+              <div
+                className={`relative z-10 transition-all duration-200 ${
+                  showMail ? 'opacity-100' : 'opacity-0'
+                }`}
+                ref={collapseFocus}
+              >
+                <Collapse />
+              </div>
             </div>
-            <div className='relative'>
+            <div>
               {/* TODO: Imagen a configurar del perfil */}
               <div
                 className='flex gap-2 items-center cursor-pointer'
-                onClick={() => setShowDropdown((state) => !state)}
+                onClick={() => setShowDropdown(!showDropdown)}
+                ref={dropdownFocus}
               >
                 <img
                   className='w-8 h-8 object-fill rounded-full'
@@ -59,7 +85,13 @@ export const Navbar: FC = () => {
                   <DownArrowIcon size={16} stroke='#4B5563' />
                 </div>
               </div>
-              {showDropdown && <DropDown />}
+              <div
+                className={`relative z-10 transition-all duration-200 ${
+                  showDropdown ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Dropdown />
+              </div>
             </div>
           </div>
         ) : (
