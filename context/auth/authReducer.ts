@@ -1,10 +1,14 @@
 import { IUser } from '../../interfaces'
 import { AuthState } from './'
 
-type ActionProps = {
-  type: '[AUTH] - LOGIN'
-  payload: IUser
-}
+type ActionProps =
+  | {
+      type: '[AUTH] - LOGIN'
+      payload: IUser
+    }
+  | {
+      type: '[AUTH] - LOGOUT'
+    }
 
 export const authReducer = (
   state: AuthState,
@@ -16,6 +20,13 @@ export const authReducer = (
         ...state,
         isAuthenticated: true,
         user: { ...action.payload },
+      }
+
+    case '[AUTH] - LOGOUT':
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: undefined,
       }
 
     default:

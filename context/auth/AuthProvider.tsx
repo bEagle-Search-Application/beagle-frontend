@@ -45,8 +45,13 @@ export const AuthProvider: FC<Props> = ({ children }) => {
     }
   }
 
+  const logoutUser = () => {
+    dispatch({ type: '[AUTH] - LOGOUT' })
+    Cookies.remove('token')
+  }
+
   return (
-    <AuthContext.Provider value={{ ...state, loginUser }}>
+    <AuthContext.Provider value={{ ...state, loginUser, logoutUser }}>
       {children}
     </AuthContext.Provider>
   )
