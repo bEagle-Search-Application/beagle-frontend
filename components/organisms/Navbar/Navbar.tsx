@@ -1,6 +1,5 @@
 import { FC, useContext, useRef, useState } from 'react'
 import NextLink from 'next/link'
-import { useRouter } from 'next/router'
 
 import { Input, Button } from '../../atoms'
 import { Collapse, Dropdown } from '../../molecules'
@@ -17,7 +16,6 @@ import { useClickOutside } from '../../../hooks'
 
 export const Navbar: FC = () => {
   const { isAuthenticated, user } = useContext(AuthContext)
-  const router = useRouter()
   const { handleOpenModal } = useContext(UIContext)
   const [showDropdown, setShowDropdown] = useState(false)
   const [showMail, setShowMail] = useState(false)
@@ -47,24 +45,24 @@ export const Navbar: FC = () => {
 
         {isAuthenticated ? (
           <div className='flex gap-11'>
-            <div className='flex gap-[13px] items-center'>
+            <div className='flex gap-[13px] items-center' ref={collapseFocus}>
               <div
                 className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
                 onClick={() => setShowMail(!showMail)}
               >
                 <BellIcon size={20} stroke='#4B5563' />
               </div>
+              <NextLink href='/mensajes' passHref>
+                <a>
+                  <div className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'>
+                    <ContactIcon size={20} stroke='#4B5563' />
+                  </div>
+                </a>
+              </NextLink>
               <div
-                className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
-                onClick={() => router.push('/mensajeria')}
-              >
-                <ContactIcon size={20} stroke='#4B5563' />
-              </div>
-              <div
-                className={`relative z-10 transition-all duration-200 ${
-                  showMail ? 'opacity-100' : 'opacity-0'
+                className={`relative transition-all duration-500 ${
+                  showMail ? 'opacity-100 z-10' : 'opacity-0 -z-10'
                 }`}
-                ref={collapseFocus}
               >
                 <Collapse />
               </div>
@@ -86,8 +84,8 @@ export const Navbar: FC = () => {
                 </div>
               </div>
               <div
-                className={`relative z-10 transition-all duration-200 ${
-                  showDropdown ? 'opacity-100' : 'opacity-0'
+                className={`relative transition-all duration-500 ${
+                  showDropdown ? 'opacity-100 z-10' : 'opacity-0 -z-10'
                 }`}
               >
                 <Dropdown />
