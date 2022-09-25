@@ -1,9 +1,10 @@
-import { ReactNode, FC, useReducer } from 'react'
+import { ReactNode, FC, useReducer, useEffect } from 'react'
 import Cookies from 'js-cookie'
 
 import { AuthContext, authReducer } from './'
 import { ILoginResponse, IUser } from '../../interfaces'
 import { bEagleApi } from '../../api'
+import { useRouter } from 'next/router'
 
 interface Props {
   children: ReactNode
@@ -21,6 +22,22 @@ const AUTH_INITIAL_STATE: AuthState = {
 
 export const AuthProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE)
+  const router = useRouter()
+
+  // useEffect(() => {
+  //   const token = Cookies.get('token')
+  //   const email = localStorage.getItem('email')
+  //   if (!token || !email) return
+
+  //   bEagleApi
+  //     .post(`/api/users/verify/${token}`)
+  //     .then((res) => {
+  //       console.log(res)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }, [])
 
   const loginUser = async (
     email: string,
@@ -36,6 +53,7 @@ export const AuthProvider: FC<Props> = ({ children }) => {
       const { response } = await data
       const { user, auth } = (await response) as ILoginResponse
       dispatch({ type: '[AUTH] - LOGIN', payload: user })
+      localStorage.setItem('email', user.email)
       Cookies.set('token', auth.token)
       // TODO: Necesitaría una función que me permita saber si el token sigue funcionando, cada que el usuario refresque la página
 
@@ -47,7 +65,9 @@ export const AuthProvider: FC<Props> = ({ children }) => {
 
   const logoutUser = () => {
     dispatch({ type: '[AUTH] - LOGOUT' })
+    router.push('/')
     Cookies.remove('token')
+    localStorage.removeItem('email')
   }
 
   return (
