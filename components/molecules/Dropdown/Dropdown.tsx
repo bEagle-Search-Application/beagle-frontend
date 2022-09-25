@@ -9,17 +9,9 @@ import {
   GiveHelpIcon,
 } from '../../../assets'
 import { AuthContext } from '../../../context'
-import { useRouter } from 'next/router'
 
 export const Dropdown: FC = () => {
   const { logoutUser } = useContext(AuthContext)
-  const router = useRouter()
-
-  //TODO: Preguntar si se hace un reload al cerrar sesión
-  const handleLogout = () => {
-    logoutUser()
-    router.push('/')
-  }
 
   //TODO: Preguntar si se deberían mover las opciones al hacer un hover
   //TODO: Agregar los demás enlaces a las páginas
@@ -73,7 +65,7 @@ export const Dropdown: FC = () => {
           className='p-2 rounded-xl text-sm text-error-600 justify-between hover:bg-neutral-100 cursor-pointer'
           label='Cerrar sesión'
           rightIcon={<ExitAppIcon size={16} stroke='#DC2626' />}
-          onClick={handleLogout}
+          onClick={() => logoutUser()}
         />
       </div>
     </div>
