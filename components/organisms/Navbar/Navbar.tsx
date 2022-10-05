@@ -60,7 +60,7 @@ export const Navbar: FC = () => {
                 </a>
               </NextLink>
               <div
-                className={`relative transition-all duration-500 ${
+                className={`relative transition-all duration-200 ease-in-out ${
                   showMail ? 'opacity-100 z-10' : 'opacity-0 -z-10'
                 }`}
               >
@@ -84,7 +84,7 @@ export const Navbar: FC = () => {
                 </div>
               </div>
               <div
-                className={`relative transition-all duration-500 ${
+                className={`relative transition-all duration-200 ease-in-out ${
                   showDropdown ? 'opacity-100 z-10' : 'opacity-0 -z-10'
                 }`}
               >

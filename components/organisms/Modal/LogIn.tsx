@@ -59,7 +59,7 @@ export const LogIn: FC = () => {
           <div className='text-center'>
             <SmileIcon size={24} stroke='#4B5563' />
           </div>
-          <h5 className='text-neutral-900 text-[24px] leading-7 font-bold'>
+          <h5 className='text-neutral-900 text-[1.5rem] leading-7 font-bold'>
             Que bueno tenerte de vuelta!
           </h5>
         </div>

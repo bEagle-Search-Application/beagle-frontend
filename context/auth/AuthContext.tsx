@@ -5,6 +5,13 @@ interface ContextProps {
   isAuthenticated: boolean
   user?: IUser
 
+  createUser: (
+    name: string,
+    surname: string,
+    email: string,
+    password: string,
+    phone: number
+  ) => Promise<boolean>
   loginUser: (email: string, password: string) => Promise<boolean>
   logoutUser: () => void
 }

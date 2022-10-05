@@ -1,4 +1,4 @@
-import { FC, FormEvent, useContext } from 'react'
+import { FC, FormEvent, useContext, useState } from 'react'
 
 import { Input, LabelInput, Button } from '../../atoms'
 import {
@@ -10,7 +10,7 @@ import {
   TwitterCustomIcon,
 } from '../../../assets'
 import { useForm } from '../../../hooks'
-import { UIContext } from '../../../context'
+import { AuthContext, UIContext } from '../../../context'
 
 const INITIAL_VALUES_REGISTER_FORM = {
   name: '',
@@ -21,14 +21,31 @@ const INITIAL_VALUES_REGISTER_FORM = {
 }
 
 export const Register: FC = () => {
-  // const [buttonDisabled, setButtonDisabled] = useState(true)
+  const [buttonDisabled, setButtonDisabled] = useState(false)
   const { handleOpenModal, handleCloseModal } = useContext(UIContext)
+  const { createUser } = useContext(AuthContext)
   const { formValues, handleChange } = useForm(INITIAL_VALUES_REGISTER_FORM)
   const { name, surname, email, password, phone } = formValues
 
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // setButtonDisabled(false)
+    setButtonDisabled(false)
+
+    const isRegisterValid = await createUser(
+      name,
+      surname,
+      email,
+      password,
+      phone
+    )
+    if (isRegisterValid) {
+      handleCloseModal()
+      return handleOpenModal('account-created')
+    } else {
+      alert('Error al crear usuario')
+      setButtonDisabled(true)
+      return
+    }
   }
 
   return (
@@ -126,14 +143,13 @@ export const Register: FC = () => {
               </span>
             </label>
           </div>
-          {/* TODO: Button continuar */}
           <div className='mt-8 flex flex-col gap-3'>
             <Button
+              type='submit'
               size='medium'
               content='Continuar'
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
-              onClick={() => handleOpenModal('account-created')}
-              // disabled={buttonDisabled}
+              disabled={buttonDisabled}
             />
             {/* TODO: Hover y active */}
             <Button
