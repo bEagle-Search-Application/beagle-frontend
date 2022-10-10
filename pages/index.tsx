@@ -18,22 +18,22 @@ const Dashboard: NextPage = () => {
   return (
     <MainLayout>
       {/* Search Filters */}
-      <div className='mt-[54px] pb-[124px]'>
+      <div className='mt-[3.375rem] pb-[7.75rem]'>
         {/* TODO: Mejorar centro */}
         <div className='flex gap-60 justify-center mb-10'>
           <div className='flex-1' />
           <div className='flex gap-6'>
             {/* TODO: Revisar diseño y asegurar de que es encuentre adecuadamente */}
-            <div className='bg-neutral-100 text-neutral-600 font-bold p-[10px] rounded-xl cursor-pointer'>
+            <div className='bg-neutral-100 text-neutral-600 font-bold p-[0.625rem] rounded-xl cursor-pointer'>
               <button>Todos</button>
             </div>
-            <div className='text-neutral-400 hover:bg-neutral-100 p-[10px] rounded-xl cursor-pointer'>
+            <div className='text-neutral-400 hover:bg-neutral-100 p-[0.625rem] rounded-xl cursor-pointer'>
               <button>Mascotas</button>
             </div>
-            <div className='text-neutral-400 hover:bg-neutral-100 p-[10px] rounded-xl cursor-pointer'>
+            <div className='text-neutral-400 hover:bg-neutral-100 p-[0.625rem] rounded-xl cursor-pointer'>
               <button>Objetos</button>
             </div>
-            <div className='text-neutral-400 hover:bg-neutral-100 p-[10px] rounded-xl cursor-pointer'>
+            <div className='text-neutral-400 hover:bg-neutral-100 p-[0.625rem] rounded-xl cursor-pointer'>
               <button>Personas</button>
             </div>
           </div>
@@ -52,13 +52,13 @@ const Dashboard: NextPage = () => {
           {isAuthenticated && (
             <div>
               <div>
-                <h4 className='text-[28px] leading-8 font-bold text-left'>
+                <h4 className='text-[1.75rem] leading-8 font-bold text-left'>
                   Búsquedas recientes
                 </h4>
                 <div className='mt-4 flex gap-5'>
-                  <div className='min-w-[267px] max-w-xs min-h-[294px] py-8 px-[53px] flex flex-col justify-center gap-6 bg-gradient-to-r from-[#8074C6] to-[#4B4183] rounded-xl'>
+                  <div className='min-w-[16.6875rem] max-w-xs min-h-[18.375rem] py-8 px-[3.3125rem] flex flex-col justify-center gap-6 bg-gradient-to-r from-[#8074C6] to-[#4B4183] rounded-xl'>
                     <AnnonationQuestionIcon size={20} stroke='#fff' />
-                    <h4 className='text-[28px] leading-7 text-neutral-50 font-bold'>
+                    <h4 className='text-[1.75rem] leading-7 text-neutral-50 font-bold'>
                       ¿Perdiste o encontraste algo?
                     </h4>
                     <Button
@@ -68,8 +68,8 @@ const Dashboard: NextPage = () => {
                       leftIcon={<AddCircleIcon size={20} stroke='#4B5563' />}
                     />
                   </div>
-                  <div className='py-[39px] px-[32.5px] min-w-[267px] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
-                    <h4 className='text-[28px] leading-7 text-neutral-600 font-bold'>
+                  <div className='py-[2.4375rem] px-[2rem] min-w-[16.6875rem] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
+                    <h4 className='text-[1.75rem] leading-7 text-neutral-600 font-bold'>
                       “Iphone 8 plus de color rojo...
                     </h4>
                     <div className='mt-6 grid auto-rows-auto grid-cols-3 gap-1'>
@@ -111,8 +111,8 @@ const Dashboard: NextPage = () => {
                       leftIcon={<SearchIcon size={20} stroke='#4B5563' />}
                     />
                   </div>
-                  <div className='py-[39px] px-[32.5px] min-w-[267px] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
-                    <h4 className='text-[28px] leading-7 text-neutral-600 font-bold'>
+                  <div className='py-[2.4375rem] px-[2rem] min-w-[16.6875rem] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
+                    <h4 className='text-[1.75rem] leading-7 text-neutral-600 font-bold'>
                       “Iphone 8 plus de color rojo...
                     </h4>
                     <div className='mt-6 grid auto-rows-auto grid-cols-3 gap-1'>
@@ -154,8 +154,8 @@ const Dashboard: NextPage = () => {
                       leftIcon={<SearchIcon size={20} stroke='#4B5563' />}
                     />
                   </div>
-                  <div className='py-[39px] px-[32.5px] min-w-[267px] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
-                    <h4 className='text-[28px] leading-7 text-neutral-600 font-bold'>
+                  <div className='py-[2.4375rem] px-[2rem] min-w-[16.6875rem] max-w-xs rounded-xl border-[1px] border-neutral-300 border-solid'>
+                    <h4 className='text-[1.75rem] leading-7 text-neutral-600 font-bold'>
                       “Iphone 8 plus de color rojo...
                     </h4>
                     <div className='mt-6 grid auto-rows-auto grid-cols-3 gap-1'>
@@ -204,7 +204,7 @@ const Dashboard: NextPage = () => {
 
           <div>
             <div>
-              <h4 className='text-[28px] leading-8 font-bold text-left'>
+              <h4 className='text-[1.75rem] leading-8 font-bold text-left'>
                 Encontrados
               </h4>
             </div>
@@ -214,7 +214,7 @@ const Dashboard: NextPage = () => {
           </div>
           <div>
             <div>
-              <h4 className='text-[28px] leading-8 font-bold text-left'>
+              <h4 className='text-[1.75rem] leading-8 font-bold text-left'>
                 Buscados
               </h4>
             </div>

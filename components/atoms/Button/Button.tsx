@@ -25,7 +25,7 @@ const ButtonContainer: FC<ButtonContainerProps> = ({
     case 'small':
       return (
         <button
-          className={`text-sm font-bold py-2 px-[14px] rounded-xl flex items-center transition-all duration-300 ease-out ${
+          className={`text-sm font-bold py-2 px-[0.875rem] rounded-xl flex items-center transition-all duration-300 ease-out ${
             className || ''
           }`}
           {...attributes}
@@ -36,7 +36,7 @@ const ButtonContainer: FC<ButtonContainerProps> = ({
     case 'medium':
       return (
         <button
-          className={`text-base font-bold py-[10px] px-4 rounded-xl flex items-center transition-all duration-300 ease-out ${
+          className={`text-base font-bold py-[0.625rem] px-4 rounded-xl flex items-center transition-all duration-300 ease-out ${
             className || ''
           }`}
           {...attributes}
@@ -57,7 +57,12 @@ const ButtonContainer: FC<ButtonContainerProps> = ({
       )
     default:
       return (
-        <button className='text-sm font-bold py-2 px-[14px] rounded-xl flex items-center'>
+        <button
+          className={`text-sm font-bold py-2 px-[0.875rem] rounded-xl flex items-center transition-all duration-300 ease-out ${
+            className || ''
+          }`}
+          {...attributes}
+        >
           Text here
         </button>
       )
@@ -74,8 +79,8 @@ export const Button: FC<ButtonProps> = ({
   ...attributes
 }) => (
   <ButtonContainer size={size} className={className} {...attributes}>
-    {leftIcon && <div className='mr-[10px]'>{leftIcon}</div>}
+    {leftIcon && <div className='mr-[0.625rem]'>{leftIcon}</div>}
     <span>{content}</span>
-    {rightIcon && <div className='ml-[10px]'>{rightIcon}</div>}
+    {rightIcon && <div className='ml-[0.625rem]'>{rightIcon}</div>}
   </ButtonContainer>
 )

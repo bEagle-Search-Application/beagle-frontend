@@ -12,9 +12,9 @@ export const LabelInput: FC<LabelInputProps> = ({ type, text, icon }) => {
   switch (type) {
     case 'primary':
       return (
-        <div className='bg-primary-50 flex items-center px-3 py-[6px] mt-1 rounded-lg max-w-sm'>
+        <div className='bg-primary-50 flex items-center px-3 py-[0.375rem] mt-1 rounded-lg max-w-sm'>
           {icon && <div>{icon}</div>}
-          <span className='text-xs text-primary-700 ml-[6px] mr-2 text-left'>
+          <span className='text-xs text-primary-700 ml-[0.375rem] mr-2 text-left'>
             {text}
           </span>
         </div>
@@ -22,9 +22,9 @@ export const LabelInput: FC<LabelInputProps> = ({ type, text, icon }) => {
 
     case 'error':
       return (
-        <div className='bg-error-50 flex items-center px-3 py-[6px] mt-1 rounded-lg max-w-sm'>
+        <div className='bg-error-50 flex items-center px-3 py-[0.375rem] mt-1 rounded-lg max-w-sm'>
           {icon && <div>{icon}</div>}
-          <span className='text-xs text-error-700 ml-[6px] mr-5 text-left'>
+          <span className='text-xs text-error-700 ml-[0.375rem] mr-5 text-left'>
             {text}
           </span>
         </div>
@@ -32,9 +32,9 @@ export const LabelInput: FC<LabelInputProps> = ({ type, text, icon }) => {
 
     case 'success':
       return (
-        <div className='bg-success-50 flex items-center px-3 py-[6px] mt-1 rounded-lg max-w-sm'>
+        <div className='bg-success-50 flex items-center px-3 py-[0.375rem] mt-1 rounded-lg max-w-sm'>
           {icon && <div>{icon}</div>}
-          <span className='text-xs text-success-700 ml-[6px] mr-5 text-left'>
+          <span className='text-xs text-success-700 ml-[0.375rem] mr-5 text-left'>
             {text}
           </span>
         </div>

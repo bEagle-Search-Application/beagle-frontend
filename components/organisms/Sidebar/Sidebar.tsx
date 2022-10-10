@@ -34,7 +34,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className='pt-5 max-h-[860px] h-[calc(100vh_-_90px)] flex flex-col justify-between text-lg select-none'>
+    <div className='pt-5 max-h-[53.75rem] h-[calc(100vh_-_5.625rem)] flex flex-col justify-between text-lg select-none'>
       <div>
         {!!user ? (
           <div
@@ -72,8 +72,8 @@ export const Sidebar = () => {
             </div>
           </div>
         ) : (
-          <div className='pl-8 pr-[43px] mb-6'>
-            <div className='bg-primary-50 text-primary-700 text-left flex gap-1 py-[6px] px-3 rounded-lg'>
+          <div className='pl-8 pr-[2.6875rem] mb-6'>
+            <div className='bg-primary-50 text-primary-700 text-left flex gap-1 py-[0.37rem] px-3 rounded-lg'>
               <div>
                 <IdeaIcon size={20} stroke='#655BA4' />
               </div>

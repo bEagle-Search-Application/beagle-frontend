@@ -7,7 +7,7 @@ export const AccountCreated: FC = () => {
   const { handleCloseModal } = useContext(UIContext)
 
   return (
-    <div className='w-[462px] mx-auto p-8'>
+    <div className='w-[28.875rem] mx-auto p-8'>
       <div className='flex flex-col gap-8'>
         <div className='flex justify-between'>
           {/* <div onClick={handleCloseModal}> */}
@@ -17,7 +17,7 @@ export const AccountCreated: FC = () => {
           </div>
         </div>
         <div className='flex flex-col gap-6'>
-          <h4 className='text-primary-900 text-[28px] leading-8 font-bold'>
+          <h4 className='text-primary-900 text-[1.75rem] leading-8 font-bold'>
             ¡Tu cuenta se ha creado con éxito!
           </h4>
           <span className='text-neutral-400 text-lg'>

@@ -27,7 +27,7 @@ export const Input: FC<InputProps> = ({
       {leftIcon && <div className='flex'>{leftIcon}</div>}
       <input
         type='text'
-        className={`ml-[6px] ${placeholderColor} bg-transparent flex-auto caret-primary-600`}
+        className={`ml-[0.375rem] ${placeholderColor} bg-transparent flex-auto caret-primary-600`}
         {...attributes}
       />
       {rightIcon && <div className='flex'>{rightIcon}</div>}

@@ -11,12 +11,12 @@ export const MessageCode: FC = () => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div className='w-[364px] mx-auto py-10'>
+    <div className='w-[22.75rem] mx-auto py-10'>
       <div className='flex flex-col gap-8 items-center'>
         <div className='flex flex-col items-center'>
           <KeyIcon size={20} stroke='#4B5563' />
           <div className='mt-4'>
-            <h5 className='text-neutral-900 text-[24px] leading-7 font-bold'>
+            <h5 className='text-neutral-900 text-[1.5rem] leading-7 font-bold'>
               Inserte el código enviado a:
             </h5>
             <div className='mt-2 flex justify-center items-center gap-2'>
@@ -39,7 +39,7 @@ export const MessageCode: FC = () => {
             </div>
           </div>
         </div>
-        <div className='p-[10px] flex gap-2 justify-items-stretch'>
+        <div className='p-[0.625rem] flex gap-2 justify-items-stretch'>
           <Input className='bg-neutral-100 w-10 h-12' />
           <Input className='bg-neutral-100 w-10 h-12' />
           <Input className='bg-neutral-100 w-10 h-12' />

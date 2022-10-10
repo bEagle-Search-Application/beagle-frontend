@@ -35,7 +35,7 @@ export const Navbar: FC = () => {
             <LogoCustomIcon />
           </a>
         </NextLink>
-        <div className='w-[375px]'>
+        <div className='w-[23.4375rem]'>
           <Input
             className='bg-neutral-100 max-w-sm'
             leftIcon={<SearchIcon size={20} stroke='#4B5563' />}
@@ -45,16 +45,19 @@ export const Navbar: FC = () => {
 
         {isAuthenticated ? (
           <div className='flex gap-11'>
-            <div className='flex gap-[13px] items-center' ref={collapseFocus}>
+            <div
+              className='flex gap-[0.8125rem] items-center'
+              ref={collapseFocus}
+            >
               <div
-                className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
+                className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
                 onClick={() => setShowMail(!showMail)}
               >
                 <BellIcon size={20} stroke='#4B5563' />
               </div>
               <NextLink href='/mensajes' passHref>
                 <a>
-                  <div className='p-[5px] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'>
+                  <div className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'>
                     <ContactIcon size={20} stroke='#4B5563' />
                   </div>
                 </a>
@@ -79,7 +82,7 @@ export const Navbar: FC = () => {
                   src='https://images.unsplash.com/photo-1589578230792-919e176e2243?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
                   alt={`Foto de perfil de ${user?.name} ${user?.surname}`}
                 />
-                <div className='px-[6px] py-[9px]'>
+                <div className='px-[0.375rem] py-[0.5625rem]'>
                   <DownArrowIcon size={16} stroke='#4B5563' />
                 </div>
               </div>

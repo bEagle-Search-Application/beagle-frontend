@@ -49,7 +49,7 @@ export const Register: FC = () => {
   }
 
   return (
-    <div className='w-[439px]'>
+    <div className='w-[27.4375rem]'>
       <div className='flex justify-end pt-4 pb-2 pr-5'>
         <div className='cursor-pointer' onClick={handleCloseModal}>
           <CancelIcon size={16} stroke='#9CA3AF' />

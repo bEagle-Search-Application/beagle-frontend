@@ -17,7 +17,7 @@ export const Option: FC<OptionProps> = ({
   ...attributes
 }) => (
   <div
-    className={`flex items-center gap-[10px] ${className || ''}`}
+    className={`flex items-center gap-[0.625rem] ${className || ''}`}
     {...attributes}
   >
     {leftIcon && <div>{leftIcon}</div>}

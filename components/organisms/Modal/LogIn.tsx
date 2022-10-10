@@ -47,7 +47,7 @@ export const LogIn: FC = () => {
   }
 
   return (
-    <div className='w-[439px] max-w-md'>
+    <div className='w-[27.5rem] max-w-md'>
       <div className='flex justify-end pt-4 pb-2 pr-5'>
         <div className='cursor-pointer' onClick={handleCloseModal}>
           <CancelIcon size={16} stroke='#9CA3AF' />
