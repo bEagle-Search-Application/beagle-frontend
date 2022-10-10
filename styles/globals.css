@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
 }
 
 html,
@@ -16,6 +22,13 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 1440px */
+@media (min-width: 80em) {
+  html {
+    font-size: 87.5%;
+  }
 }
 
 a {
@@ -35,5 +48,6 @@ button {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
