@@ -30,13 +30,13 @@ const PostLostObject = () => (
               leftIcon={<LeftIcon size={16} stroke='#4B5563' />}
             />
           </div>
-          <h4 className='text-[28px] text-neutral-900 leading-8 font-semibold'>
+          <h4 className='text-[1.75rem] text-neutral-900 leading-8 font-semibold'>
             Publicar un anuncio
           </h4>
 
           <form className='px-4'>
             <div className='flex flex-col gap-4'>
-              <span className='text-[16px] text-neutral-600 leading-4 tracking-[1px] font-bold'>
+              <span className='text-[1rem] text-neutral-600 leading-4 tracking-[1px] font-bold'>
                 PASO 1: CAMPO OBLIGATORIO
               </span>
               <div className='flex flex-col gap-1'>
@@ -119,13 +119,13 @@ const PostLostObject = () => (
                 </span>
                 <div className='flex items-stretch gap-4'>
                   <div className='ml-2 flex-1'>
-                    <div className='bg-neutral-100 p-[22px] rounded-lg flex items-center gap-[22px]'>
+                    <div className='bg-neutral-100 p-[1.375rem] rounded-lg flex items-center gap-[1.375rem]'>
                       <img
-                        className='w-[66px] h-[66px] rounded-full object-cover'
+                        className='w-[4.125rem] h-[4.125rem] rounded-full object-cover'
                         src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
                         alt='Foto de perfil de USUARIO'
                       />
-                      <div className='flex flex-col gap-4 text-sm max-w-[228px] text-neutral-600'>
+                      <div className='flex flex-col gap-4 text-sm max-w-[14.25rem] text-neutral-600'>
                         <div className='flex items-center gap-3'>
                           <MapIcon size={16} stroke='#4B5563' />
                           <span className='text-left'>
@@ -177,7 +177,7 @@ const PostLostObject = () => (
               </div>
             </div>
             <div className='mt-10'>
-              <span className='text-[16px] text-neutral-600 leading-4 tracking-[1px] font-bold'>
+              <span className='text-[1rem] text-neutral-600 leading-4 tracking-[1px] font-bold'>
                 PASO 2: CAMPO OPCIONAL
               </span>
               <div className='p-4 mt-2 flex flex-col gap-4'>
@@ -186,7 +186,7 @@ const PostLostObject = () => (
                     Fotografías
                   </span>
                   <div className='mx-2 w-full h-48 rounded-xl cursor-pointer border-[2px] border-neutral-400 border-dashed'>
-                    <div className='h-full flex flex-col justify-center items-center gap-[13px]'>
+                    <div className='h-full flex flex-col justify-center items-center gap-[0.8125rem]'>
                       <ImageIcon size={24} stroke='#6B7280' />
                       <p className='text-xs text-center text-neutral-400'>
                         Arrastra aquí
@@ -215,7 +215,7 @@ const PostLostObject = () => (
                   <span className='text-neutral-600 text-sm font-bold'>
                     Recompensa
                   </span>
-                  <div className='px-2 box-content max-w-[142px] rounded-lg border-[1px] border-solid border-neutral-400'>
+                  <div className='px-2 box-content max-w-[8.875rem] rounded-lg border-[1px] border-solid border-neutral-400'>
                     <div className='flex justify-center items-center'>
                       <input
                         className='mr-1 text-xs text-end placeholder:text-start'

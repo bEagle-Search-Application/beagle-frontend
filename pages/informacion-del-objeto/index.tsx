@@ -16,9 +16,9 @@ import { MainLayout } from '../../layouts'
 const AboutTheObject = () => (
   <MainLayout>
     <div className='pb-4 text-neutral-600'>
-      <div className='mt-10 flex gap-[10px]'>
-        <div className='max-w-[726px]'>
-          <div className='px-[14px] py-2 mb-10'>
+      <div className='mt-10 flex gap-[0.625rem]'>
+        <div className='max-w-[45.375rem]'>
+          <div className='px-[0.875rem] py-2 mb-10'>
             <Button
               size='small'
               content='Volver'
@@ -29,10 +29,10 @@ const AboutTheObject = () => (
             <div className='flex flex-col gap-4'>
               <div>
                 <div className='flex items-center gap-4'>
-                  <h4 className='text-black text-[28px] leading-8 font-bold'>
+                  <h4 className='text-black text-[1.75rem] leading-8 font-bold'>
                     Bolso Beige
                   </h4>
-                  <div className='p-[10px] rounded-full shadow-[2px_6px_20px_rgba(0,0,0,0.1)] cursor-pointer'>
+                  <div className='p-[0.625rem] rounded-full shadow-[2px_6px_20px_rgba(0,0,0,0.1)] cursor-pointer'>
                     {/* TODO: Revisar si es un ícono para agregar a favoritos o algo por el estilo */}
                     <HeartIcon size={16} stroke='#4B5563' />
                   </div>
@@ -44,26 +44,27 @@ const AboutTheObject = () => (
                 </div>
               </div>
               <div className='pl-4'>
-                <span className='text-neutral-400 text-[16px] leading-5 font-bold tracking-[1px]'>
+                <span className='text-neutral-400 text-[1rem] leading-5 font-bold tracking-[1px]'>
                   28/06/22
                 </span>
               </div>
             </div>
             <div className='flex flex-col gap-4'>
-              <span className='text-[16px] leading-4 font-bold tracking-[1px]'>
+              <span className='text-[1rem] leading-4 font-bold tracking-[1px]'>
                 FOTOGRAFÍAS
               </span>
-              <div className='pl-4 flex gap-[11px]'>
-                <div className='max-w-[200px]'>
+              <div className='pl-4 flex gap-[0.6875rem]'>
+                <div className='max-w-[12.5rem]'>
                   {/* TODO: Dinamizar la propiedad 'alt' --> objeto perdido */}
                   <img
-                    className='h-[200px] rounded-xl object-cover'
+                    className='h-[12.5rem
+                    ] rounded-xl object-cover'
                     src='https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=929&q=80'
                     alt='objeto perdido'
                   />
                 </div>
-                <div className='flex flex-col gap-[10px]'>
-                  <div className='max-w-[210px]'>
+                <div className='flex flex-col gap-[0.625rem]'>
+                  <div className='max-w-[13.125rem]'>
                     {/* TODO: Dinamizar la propiedad 'alt' --> objeto perdido */}
                     <img
                       className='w-52 h-24 rounded-xl object-cover'
@@ -83,7 +84,7 @@ const AboutTheObject = () => (
               </div>
             </div>
             <div className='flex flex-col gap-6'>
-              <span className='text-[16px] leading-4 font-bold tracking-[1px]'>
+              <span className='text-[1rem] leading-4 font-bold tracking-[1px]'>
                 DESCRIPCIÓN
               </span>
               <div className='pl-4'>
@@ -95,7 +96,7 @@ const AboutTheObject = () => (
               </div>
             </div>
             <div className='flex flex-col gap-6'>
-              <span className='text-[16px] leading-4 font-bold tracking-[1px]'>
+              <span className='text-[1rem] leading-4 font-bold tracking-[1px]'>
                 RECOMPENSA
               </span>
               <div className='pl-4 flex items-center gap-4'>
@@ -109,7 +110,7 @@ const AboutTheObject = () => (
               </div>
             </div>
             <div className='flex flex-col gap-6'>
-              <span className='text-[16px] leading-4 font-bold tracking-[1px]'>
+              <span className='text-[1rem] leading-4 font-bold tracking-[1px]'>
                 UBICACIÓN
               </span>
               <div className='pl-4 flex items-center gap-4'>
@@ -126,7 +127,7 @@ const AboutTheObject = () => (
         </div>
         <div className='flex-auto'>
           <div className='flex flex-col justify-center gap-4'>
-            <h6 className='text-[12px] leading-4 text-center font-bold tracking-[1px]'>
+            <h6 className='text-[0.75rem] leading-4 text-center font-bold tracking-[1px]'>
               ENCONTRADO POR:
             </h6>
             <div className='max-w-36'>
@@ -160,7 +161,7 @@ const AboutTheObject = () => (
                 size='small'
                 content='Ver perfil'
               />
-              <div className='bg-primary-500 hover:bg-primary-700 active:bg-primary-900 py-2 px-[14px] rounded-xl cursor-pointer'>
+              <div className='bg-primary-500 hover:bg-primary-700 active:bg-primary-900 py-2 px-[0.875rem] rounded-xl cursor-pointer'>
                 <MobileIcon size={20} stroke='#fff' />
               </div>
             </div>
@@ -169,23 +170,23 @@ const AboutTheObject = () => (
             </div>
             <div className='flex gap-4 justify-center'>
               {/* TODO: Dinamizar los links de los enlaces */}
-              <div className='bg-neutral-400 p-[6px] rounded-full cursor-pointer'>
+              <div className='bg-neutral-400 p-[0.375rem] rounded-full cursor-pointer'>
                 <WhatsappIcon size={12} fill='#fff' />
               </div>
-              <div className='bg-neutral-400 p-[6px] rounded-full cursor-pointer'>
+              <div className='bg-neutral-400 p-[0.375rem] rounded-full cursor-pointer'>
                 <FacebookIcon size={12} fill='#fff' />
               </div>
-              <div className='bg-neutral-400 p-[6px] rounded-full cursor-pointer'>
+              <div className='bg-neutral-400 p-[0.375rem] rounded-full cursor-pointer'>
                 <InstagramIcon size={12} fill='#fff' />
               </div>
-              <div className='bg-neutral-400 p-[6px] rounded-full cursor-pointer'>
+              <div className='bg-neutral-400 p-[0.375rem] rounded-full cursor-pointer'>
                 <ShareIcon size={12} stroke='#fff' />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='mt-10 px-[14px] py-2 flex justify-between'>
+      <div className='mt-10 px-[0.875rem] py-2 flex justify-between'>
         <div className='py-1'>
           <Button
             size='small'

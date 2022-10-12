@@ -61,16 +61,15 @@ const Settings = () => (
             </div>
 
             <div className='mt-10 flex justify-between items-center'>
-              <div>
-                {/* TODO: Preguntar el color del hover y active */}
+              <div className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800'>
                 <Button
                   size='small'
                   content='Volver'
-                  leftIcon={<LeftIcon size={16} stroke='#4B5563' />}
+                  leftIcon={<LeftIcon size={16} stroke='currentColor' />}
                 />
               </div>
               <Button
-                className='bg-primary-500 hover:bg-primary-700 active:bg-primary-900 text-white'
+                className='text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900'
                 size='medium'
                 content='Enviar'
               />

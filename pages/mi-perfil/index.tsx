@@ -13,7 +13,7 @@ const MyProfile = () => (
         />
         <div className='flex flex-col justify-center'>
           {/* TODO: Dinamizar nombre */}
-          <h5 className='text-neutral-900 text-[24px] leading-7 font-semibold'>
+          <h5 className='text-neutral-900 text-[1.5rem] leading-7 font-semibold'>
             Name Surname
           </h5>
           <div className='flex items-center gap-1'>
@@ -27,7 +27,7 @@ const MyProfile = () => (
           </div>
         </div>
       </div>
-      <div className='max-w-[544px] flex flex-col gap-10 mt-10 text-neutral-600'>
+      <div className='max-w-[34rem] flex flex-col gap-10 mt-10 text-neutral-600'>
         <div>
           <span className='text-sm font-bold tracking-[1px]'>BIO</span>
           <div className='m-4'>
@@ -52,7 +52,7 @@ const MyProfile = () => (
           </div>
         </div>
       </div>
-      <div className='text-neutral-600 mt-[52px]'>
+      <div className='text-neutral-600 mt-[3.25rem]'>
         <span className='text-sm font-bold tracking-[1px]'>RESEÑAS</span>
         <div className='mt-4'>
           <GridExtraCard />
