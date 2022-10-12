@@ -24,9 +24,8 @@ const Objects = () => (
           </div>
         </div>
         <div className='flex-1'>
-          {/* TODO: Hover */}
           <Button
-            className='text-neutral-600 hover:bg-neutral-100 ml-auto'
+            className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800 ml-auto'
             size='medium'
             content='Filtros'
             leftIcon={<FilterIcon size={20} stroke='#4B5563' />}

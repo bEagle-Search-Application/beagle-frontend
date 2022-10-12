@@ -192,10 +192,9 @@ const PostLostObject = () => (
                         Arrastra aquí
                         <br />o
                       </p>
-                      {/* TODO: Color active y hover */}
                       {/* TODO: Agregar input file y vincularlo con useRef */}
                       <Button
-                        className='bg-neutral-500 hover:bg-neutral-700 active:bg-neutral-900 text-white'
+                        className='bg-neutral-600 hover:bg-neutral-700 active:bg-neutral-800 text-white'
                         size='small'
                         content='Selecciona desde tu dispositivo'
                       />
