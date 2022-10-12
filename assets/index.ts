@@ -45,6 +45,3 @@ export { HappyFaceIcon } from './icons/HappyFaceIcon'
 export { ContentFaceIcon } from './icons/ContentFaceIcon'
 
 export * from './icons/custom'
-// TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
-export { default as GroupIcon } from './icons/Group.svg'
-export { default as LogoIcon } from './icons/Logo.svg'
