@@ -1,12 +1,14 @@
 # Installation
-
 1. Download the directory
 2. Change into the project directory and open ur terminal
 3. Run the following command <code>npm install</code>
 4. Finally run <code>npm run dev</code> to start the project
 
-# Pages
+# Docker
+1. Download the Backend Repo, change to the dev branch and run <code>docker-compose up</code> to start the project
+2. Go to the CLI of the "Phpmyadmin" container and run <code>composer install</code> and then <code>php artisan migrate:refresh --seed</code>
 
+# Pages
 <b>Port usually is 3000</b>
 
 1. localhost:{PORT} --> Home page
