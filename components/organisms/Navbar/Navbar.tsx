@@ -25,8 +25,6 @@ export const Navbar: FC = () => {
   useClickOutside(dropdownFocus, () => setShowDropdown(false))
   useClickOutside(collapseFocus, () => setShowMail(false))
 
-  //TODO: Al hacer hover en los espacios en blanco se puede redirigir a la página de configuraciones y cerrar sesión
-  //TODO: Arreglar eso
   return (
     <nav className='px-8 py-4 border-b-[1px] border-solid border-neutral-300'>
       <div className='flex justify-between items-center'>
