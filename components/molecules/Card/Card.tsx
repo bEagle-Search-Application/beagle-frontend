@@ -76,11 +76,10 @@ export const Card: FC<CardProps> = ({ title }) => (
       <div className='mb-7'>
         <div className='flex justify-center gap-8 px-[0.9375rem]'>
           {/* TODO: Redirigir al enlace de ver detalles del objeto  */}
-          {/* TODO: Agregar el bg-color al realizar los eventos hover y active  */}
           <Button
             size='medium'
             content='Ver detalles'
-            className='hover:bg-neutral-100 active:bg-neutral-200'
+            className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800'
           />
           {/* TODO: Abrir mensajería o llevar al chat con un mensaje predeterminado  */}
           <Button

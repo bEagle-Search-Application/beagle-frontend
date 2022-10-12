@@ -26,8 +26,12 @@ export const AccountCreated: FC = () => {
           </span>
         </div>
         <div className='flex justify-between'>
-          {/* TODO: Revisar hover y active */}
-          <Button size='medium' content='Cerrar' onClick={handleCloseModal} />
+          <Button
+            size='medium'
+            className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800'
+            content='Cerrar'
+            onClick={handleCloseModal}
+          />
           <Button
             size='medium'
             className='text-white bg-success-500 hover:bg-success-700 active:bg-success-900'

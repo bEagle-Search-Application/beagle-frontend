@@ -16,7 +16,7 @@ export const Dropdown: FC = () => {
   //TODO: Preguntar si se deberían mover las opciones al hacer un hover
   //TODO: Agregar los demás enlaces a las páginas
   return (
-    <div className='w-52 h-[336px] select-none p-4 bg-white absolute top-2 right-0 rounded-xl shadow-[2px_6px_20px_rgba(0,0,0,0.15)] '>
+    <div className='w-52 h-[21rem] select-none p-4 bg-white absolute top-2 right-0 rounded-xl shadow-[2px_6px_20px_rgba(0,0,0,0.15)] '>
       <div className='mt-1 pb-2 border-solid border-b-neutral-200 border-b-[0.5px]'>
         <NextLink href='/mi-perfil' passHref>
           <a>
