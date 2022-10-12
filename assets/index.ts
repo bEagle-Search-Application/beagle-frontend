@@ -41,6 +41,8 @@ export { ExitAppIcon } from './icons/ExitAppIcon'
 export { GiveHelpIcon } from './icons/GiveHelpIcon'
 export { WarningIcon } from './icons/WarningIcon'
 export { AnnonationQuestionIcon } from './icons/AnnonationQuestionIcon'
+export { HappyFaceIcon } from './icons/HappyFaceIcon'
+export { ContentFaceIcon } from './icons/ContentFaceIcon'
 
 export * from './icons/custom'
 // TODO: Preguntarle a Isaias si pudiese hacer que estos 2 íconos no vengan en grupo
