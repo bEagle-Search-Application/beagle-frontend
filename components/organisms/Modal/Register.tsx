@@ -6,13 +6,13 @@ import * as Yup from 'yup'
 import { Input, LabelInput, Button } from '../../atoms'
 import {
   CancelIcon,
-  SmileyFaceIcon,
   IdeaIcon,
   GoogleCustomIcon,
   FacebookIcon,
   TwitterCustomIcon,
   SuccessCheckIcon,
   AddCircleIcon,
+  ContentFaceIcon,
 } from '../../../assets'
 import { AuthContext, UIContext } from '../../../context'
 import { regExp } from '../../../utils'
@@ -93,9 +93,8 @@ export const Register: FC = () => {
       </div>
       <div className='flex flex-col gap-8 pb-10'>
         <div className='flex flex-col items-center gap-4'>
-          {/* TODO: Usar el ícono que esta en figma */}
           <div className='text-center'>
-            <SmileyFaceIcon size={24} stroke='#4B5563' />
+            <ContentFaceIcon size={24} stroke='#4B5563' />
           </div>
           <h5 className='text-neutral-900 text-[24px] leading-7 font-bold'>
             Bienvenido a bEagle!
@@ -233,11 +232,10 @@ export const Register: FC = () => {
               className='w-full justify-center text-white bg-primary-500 hover:bg-primary-700 active:bg-primary-900  disabled:opacity-50'
               disabled={!isValid}
             />
-            {/* TODO: Hover y active */}
             <Button
               size='medium'
               content='Ya tengo una cuenta'
-              className='w-full justify-center text-neutral-600 hover:bg-neutral-100 active:bg-neutral-300'
+              className='w-full justify-center text-neutral-600 hover:text-neutral-700 active:text-neutral-800'
               onClick={() => handleOpenModal('login')}
             />
           </div>
