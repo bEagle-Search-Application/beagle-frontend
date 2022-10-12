@@ -54,11 +54,10 @@ export const MessageCode: FC = () => {
             className='justify-center bg-primary-500 text-white hover:bg-primary-700 active:bg-primary-900'
             onClick={() => handleOpenModal('account-created')}
           />
-          {/* TODO: Hover y active bg */}
           <Button
             size='medium'
             content='Reenviar código'
-            className='justify-center text-neutral-600 hover:bg-neutral-100 active:bg-neutral-200'
+            className='justify-center text-neutral-600 hover:text-neutral-700 active:text-neutral-800'
           />
         </div>
       </div>
