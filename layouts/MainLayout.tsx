@@ -41,7 +41,6 @@ export const MainLayout: FC<Props> = ({ children }) => {
         <div className='min-w-[16rem] max-w-[17.5rem]'>
           <Sidebar />
         </div>
-        {/* TODO: cambiar el text -left */}
         {/* TODO: hacer responsive */}
         <div className='w-full px-4 border-l border-solid border-neutral-300'>
           {children}
@@ -50,7 +49,6 @@ export const MainLayout: FC<Props> = ({ children }) => {
       {/* MODAL */}
       {state.modalIsOpen && (
         <div className='fixed left-0 top-0 w-full h-full z-10 overflow-hidden backdrop-blur bg-neutral-900/40'>
-          {/* <div className='max-w-md bg-white relative mx-auto top-[50%] translate-y-[-50%] rounded-xl'> */}
           <div className='flex w-fit bg-white mx-auto relative top-[50%] translate-y-[-50%] rounded-xl'>
             {RenderAccountModal(state.whichModal)}
           </div>
