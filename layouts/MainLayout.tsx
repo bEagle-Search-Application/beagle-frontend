@@ -38,7 +38,7 @@ export const MainLayout: FC<Props> = ({ children }) => {
     <div className='mx-auto'>
       <Navbar />
       <main className='flex'>
-        <div className='min-w-[16rem] max-w-[17.5rem]'>
+        <div className='min-w-[17.5rem] max-w-[17.5rem]'>
           <Sidebar />
         </div>
         {/* TODO: hacer responsive */}
