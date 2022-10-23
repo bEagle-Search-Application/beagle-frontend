@@ -24,7 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 1440px */
+/* 1280px */
 @media (min-width: 80em) {
   html {
     font-size: 87.5%;
