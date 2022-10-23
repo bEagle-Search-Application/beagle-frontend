@@ -48,21 +48,21 @@ export const Navbar: FC = () => {
               ref={collapseFocus}
             >
               <div
-                className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'
+                className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-200 hover:left-[1px] hover:bottom-[1px]'
                 onClick={() => setShowMail(!showMail)}
               >
                 <BellIcon size={20} stroke='#4B5563' />
               </div>
               <NextLink href='/mensajes' passHref>
                 <a>
-                  <div className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-300 hover:left-[1px] hover:bottom-[1px]'>
+                  <div className='p-[0.3125rem] rounded-full cursor-pointer relative hover:bg-slate-200 hover:left-[1px] hover:bottom-[1px]'>
                     <ContactIcon size={20} stroke='#4B5563' />
                   </div>
                 </a>
               </NextLink>
               <div
-                className={`relative transition-all duration-200 ease-in-out ${
-                  showMail ? 'opacity-100 z-10' : 'opacity-0 -z-10'
+                className={`relative transition-all z-50 duration-300 ease-out ${
+                  showMail ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
               >
                 <Collapse />
@@ -85,8 +85,8 @@ export const Navbar: FC = () => {
                 </div>
               </div>
               <div
-                className={`relative transition-all duration-200 ease-in-out ${
-                  showDropdown ? 'opacity-100 z-10' : 'opacity-0 -z-10'
+                className={`relative z-50 transition-all duration-300 ease-in-out ${
+                  showDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
               >
                 <Dropdown />
