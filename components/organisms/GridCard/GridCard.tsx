@@ -1,14 +1,13 @@
 import { Card } from '../../molecules'
 
 export const GridCard = () => (
-  // <div className='grid gap-4 grid-flow-col auto-cols-[minmax(22.6875rem,_28.125rem)] grid-rows-2'>
-  <div className='grid gap-4 grid-cols-[repeat(auto-fit,minmax(22.6875rem,_1fr))]'>
+  <div className='flex flex-wrap gap-8 justify-between xl:justify-start desktop:justify-between desktop:gap-x-3 desktop:gap-y-8'>
     {/* TODO: Dinamizar el agrupamiento y usar algún "map" para mostrar las cards */}
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
-    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
+    <Card title='Cartera de cuero marrón rojizo con mucho valor dentro.' />
   </div>
 )
