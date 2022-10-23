@@ -17,8 +17,9 @@ interface CardProps {
 
 // TODO: Agregar las propiedades a pasar al componente
 export const Card: FC<CardProps> = ({ title }) => (
-  <div className='flex flex-col min-w-[22.6875rem] max-w-[28.125rem] rounded-3xl outline outline-1 outline-neutral-300'>
-    <div className='mb-6 relative'>
+  <div className='max-w-full w-[22.6785rem] max-w-[28rem] flex flex-col flex-grow rounded-3xl outline outline-1 outline-neutral-300'>
+    {/* Imagen y Badge */}
+    <div className='mb-6 relative -z-50'>
       <div className='text-white absolute left-5 top-6'>
         {/* TODO: Buscado o encontrado dependerá del objeto */}
         <Badge
@@ -33,6 +34,7 @@ export const Card: FC<CardProps> = ({ title }) => (
         alt='About'
       />
     </div>
+    {/* Contenido de la Card */}
     <div className='px-[1.625rem] flex flex-col gap-8 items-center'>
       <div>
         <h6 className='text-neutral-900 text-center font-bold text-[1.25rem] leading-6'>
@@ -40,22 +42,22 @@ export const Card: FC<CardProps> = ({ title }) => (
           {title}
         </h6>
       </div>
-      <div className='flex flex-col gap-4 text-sm max-w-[14.25rem] text-neutral-600'>
-        <div className='flex gap-4'>
-          <MapIcon size={24} stroke='#4B5563' />
+      <div className='px-[2.6rem] flex flex-col gap-4 text-sm text-neutral-600'>
+        <div className='flex items-center gap-4'>
+          <MapIcon size={20} stroke='#4B5563' />
           <span className='text-left'>
             {/* // TODO: Dinamizar la dirección */}
             Via loppolo 17, Ragusa, 97100 (+5km)
           </span>
         </div>
-        <div className='flex gap-4'>
+        <div className='flex items-center gap-4'>
           {/* // TODO: Dinamizar el monto */}
           {/* // TODO: Este campo es condicional */}
-          <RewardIcon size={24} stroke='#4B5563' />
+          <RewardIcon size={20} stroke='#4B5563' />
           <span>Monto de la recompensa</span>
         </div>
-        <div className='flex gap-4'>
-          <UserIcon size={24} stroke='#4B5563' />
+        <div className='flex items-center gap-4'>
+          <UserIcon size={20} stroke='#4B5563' />
           <div className='flex items-center gap-2'>
             {/* // TODO: Dinamizar el nombre y apellido */}
             <span>Nombre Apellido</span>
@@ -67,8 +69,8 @@ export const Card: FC<CardProps> = ({ title }) => (
             </div>
           </div>
         </div>
-        <div className='flex gap-4'>
-          <TimeIcon size={24} stroke='#4B5563' />
+        <div className='flex items-center gap-4'>
+          <TimeIcon size={20} stroke='#4B5563' />
           {/* // TODO: Dinamizar la fecha */}
           <span>Días desde que se publicó</span>
         </div>
