@@ -13,7 +13,7 @@ import {
   SadnessIcon,
   SettingsIcon,
   HelpIcon,
-  DogCustomIcon,
+  DogIcon,
   StarIcon,
 } from '../../../assets'
 import { AuthContext, UIContext } from '../../../context'
@@ -107,7 +107,12 @@ export const Sidebar = () => {
                   router.asPath === '/' ? 'bg-primary-100' : ''
                 } hover:bg-primary-100 cursor-pointer`}
               >
-                <Option label='Todos los avisos' leftIcon={<DogCustomIcon />} />
+                <Option
+                  label='Todos los avisos'
+                  leftIcon={
+                    <DogIcon size={20} stroke='#4B5563' fill='#4B5563' />
+                  }
+                />
               </div>
             </a>
           </NextLink>
