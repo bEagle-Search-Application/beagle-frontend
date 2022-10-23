@@ -43,5 +43,6 @@ export { WarningIcon } from './icons/WarningIcon'
 export { AnnonationQuestionIcon } from './icons/AnnonationQuestionIcon'
 export { HappyFaceIcon } from './icons/HappyFaceIcon'
 export { ContentFaceIcon } from './icons/ContentFaceIcon'
+export { DogIcon } from './icons/DogIcon'
 
 export * from './icons/custom'
