@@ -70,7 +70,7 @@ export const Register: FC = () => {
       email: Yup.string()
         .email('Introduzca un email válido')
         .required('El email es requerido'),
-      password: Yup.string().required('La contraseña es requerida'),
+      password: Yup.string().min(8,'La contraseña debe tener al menos 8 caracteres').required('La contraseña es requerida'),
       phone: Yup.number()
         .test(
           'len',
@@ -96,7 +96,7 @@ export const Register: FC = () => {
           <div className='text-center'>
             <ContentFaceIcon size={24} stroke='#4B5563' />
           </div>
-          <h5 className='text-neutral-900 text-[24px] leading-7 font-bold'>
+          <h5 className='text-neutral-900 text-[1.5rem] leading-7 font-bold'>
             Bienvenido a bEagle!
           </h5>
         </div>
