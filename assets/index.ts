@@ -44,5 +44,6 @@ export { AnnonationQuestionIcon } from './icons/AnnonationQuestionIcon'
 export { HappyFaceIcon } from './icons/HappyFaceIcon'
 export { ContentFaceIcon } from './icons/ContentFaceIcon'
 export { DogIcon } from './icons/DogIcon'
+export { GiftIcon } from './icons/GiftIcon'
 
 export * from './icons/custom'
