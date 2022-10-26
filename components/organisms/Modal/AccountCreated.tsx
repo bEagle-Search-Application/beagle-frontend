@@ -1,10 +1,13 @@
+import { FC, useContext } from 'react'
+import { useRouter } from 'next/router'
+
 import { Button } from '../../atoms'
 import { SuccessCheckIcon, CancelIcon } from '../../../assets'
-import { FC, useContext } from 'react'
 import { UIContext } from '../../../context'
 
 export const AccountCreated: FC = () => {
   const { handleCloseModal } = useContext(UIContext)
+  const router = useRouter()
 
   return (
     <div className='w-[28.875rem] mx-auto p-8'>
@@ -36,6 +39,7 @@ export const AccountCreated: FC = () => {
             size='medium'
             className='text-white bg-success-500 hover:bg-success-700 active:bg-success-900'
             content='Ir a mi email'
+            onClick={() => router.push('/email-test')}
           />
         </div>
       </div>
