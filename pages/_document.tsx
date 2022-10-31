@@ -21,6 +21,8 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap'
             rel='stylesheet'
           />
+          {/* TODO: Agregar atributos para favorecer al SEO del favicon */}
+          <link rel='shortcut icon' href='/favicon.svg' />
         </Head>
         <body>
           <Main />
