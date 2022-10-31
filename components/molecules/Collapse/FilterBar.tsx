@@ -156,7 +156,7 @@ export const FilterBar = () => {
                 />
               </div>
 
-              <div className='pt-1 pb-2 border-b-[0.5px] border-b-neutral-200'>
+              <div className='pt-1 pb-2'>
                 <Option
                   className='py-2 pl-2 pr-6 text-sm text-neutral-600 justify-between cursor-pointer rounded-lg transition ease-out duration-300 relative hover:bg-neutral-100 hover:bottom-[1px]'
                   label='Sin recompensa'
