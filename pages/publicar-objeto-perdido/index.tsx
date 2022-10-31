@@ -1,5 +1,5 @@
 import { MainLayout } from '../../layouts'
-import { Badge, Button, Input } from '../../components'
+import { Badge, Button, Input, wrapperPrivateRoute } from '../../components'
 import {
   AddCircleIcon,
   CancelIcon,
@@ -267,4 +267,4 @@ const PostLostObject = () => (
   </MainLayout>
 )
 
-export default PostLostObject
+export default wrapperPrivateRoute(PostLostObject)

@@ -1,5 +1,5 @@
 import { FilterIcon } from '../../assets'
-import { Button, GridCard } from '../../components'
+import { Button, GridCard, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const SearchResults = () => (
@@ -68,4 +68,4 @@ const SearchResults = () => (
   </MainLayout>
 )
 
-export default SearchResults
+export default wrapperPrivateRoute(SearchResults)

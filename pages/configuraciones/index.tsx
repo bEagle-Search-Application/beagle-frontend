@@ -1,5 +1,5 @@
 import { LeftIcon, DownArrowIcon } from '../../assets'
-import { Button, Input } from '../../components'
+import { Button, Input, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const Settings = () => (
@@ -81,4 +81,4 @@ const Settings = () => (
   </MainLayout>
 )
 
-export default Settings
+export default wrapperPrivateRoute(Settings)

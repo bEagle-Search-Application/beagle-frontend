@@ -1,4 +1,4 @@
-import { Button, GridSingleCard } from '../../components'
+import { Button, GridSingleCard, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 import { FilterIcon } from '../../assets'
 
@@ -48,4 +48,4 @@ const Objects = () => (
   </MainLayout>
 )
 
-export default Objects
+export default wrapperPrivateRoute(Objects)

@@ -10,7 +10,7 @@ import {
   StarIcon,
   WhatsappIcon,
 } from '../../assets'
-import { Badge, Button } from '../../components'
+import { Badge, Button, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const AboutTheObject = () => (
@@ -204,4 +204,4 @@ const AboutTheObject = () => (
   </MainLayout>
 )
 
-export default AboutTheObject
+export default wrapperPrivateRoute(AboutTheObject)

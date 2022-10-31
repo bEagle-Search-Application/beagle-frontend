@@ -1,5 +1,5 @@
 import { LocationIcon, MobileIcon, StarIcon } from '../../assets'
-import { GridExtraCard } from '../../components'
+import { GridExtraCard, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const MyProfile = () => (
@@ -62,4 +62,4 @@ const MyProfile = () => (
   </MainLayout>
 )
 
-export default MyProfile
+export default wrapperPrivateRoute(MyProfile)
