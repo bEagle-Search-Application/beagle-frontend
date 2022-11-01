@@ -104,7 +104,7 @@ export const Sidebar = () => {
             <a>
               <div
                 className={`flex gap-2 px-8 py-5 ${
-                  router.asPath === '/' ? 'bg-primary-100' : ''
+                  router.route === '/' ? 'bg-primary-100' : ''
                 } hover:bg-primary-100 cursor-pointer`}
               >
                 <Option
@@ -123,7 +123,7 @@ export const Sidebar = () => {
                 <a>
                   <div
                     className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                      router.asPath === '/mensajes' ? 'bg-primary-100' : ''
+                      router.route === '/mensajes' ? 'bg-primary-100' : ''
                     } hover:bg-primary-100 active:bg-primary-100`}
                   >
                     <Option
@@ -138,7 +138,7 @@ export const Sidebar = () => {
                 <a>
                   <div
                     className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                      router.asPath === '/mis-favoritos' ? 'bg-primary-100' : ''
+                      router.route === '/mis-favoritos' ? 'bg-primary-100' : ''
                     } hover:bg-primary-100 active:bg-primary-100`}
                   >
                     <Option
@@ -152,7 +152,7 @@ export const Sidebar = () => {
                 <a>
                   <div
                     className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                      router.asPath === '/mis-encontrados'
+                      router.route === '/mis-encontrados'
                         ? 'bg-primary-100'
                         : ''
                     } hover:bg-primary-100 active:bg-primary-100`}
@@ -168,7 +168,7 @@ export const Sidebar = () => {
                 <a>
                   <div
                     className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                      router.asPath === '/mis-perdidos' ? 'bg-primary-100' : ''
+                      router.route === '/mis-perdidos' ? 'bg-primary-100' : ''
                     } hover:bg-primary-100 active:bg-primary-100`}
                   >
                     <Option
@@ -189,7 +189,7 @@ export const Sidebar = () => {
             <a>
               <div
                 className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                  router.asPath === '/configuraciones' ? 'bg-primary-100' : ''
+                  router.route === '/configuraciones' ? 'bg-primary-100' : ''
                 } hover:bg-primary-100 active:bg-primary-100`}
               >
                 <Option
@@ -205,7 +205,7 @@ export const Sidebar = () => {
           <a>
             <div
               className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                router.asPath === '/ayuda' ? 'bg-primary-100' : ''
+                router.route === '/ayuda' ? 'bg-primary-100' : ''
               } hover:bg-primary-100 active:bg-primary-100`}
             >
               <Option
