@@ -24,16 +24,43 @@ export const AuthProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE)
   const router = useRouter()
 
+  // Efecto que se ejecuta al iniciar la aplicación y verifica si el usuario tiene una sesión activa
   useEffect(() => {
-    checkToken()
+    const controller = new AbortController()
+    checkToken(controller)
+
+    return () => controller.abort()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const checkToken = async () => {
-    if (!Cookies.get('access_token') || !Cookies.get('refresh_token')) return
-    if (!window.localStorage.getItem('user-data')) return
-    //TODO: LLamar a la api para verificar el token
-    //TODO: En caso no exista token de access o refresh significa que el usuario no está logeado
-    //TODO: En caso no exista user en localStorage significa que el usuario no está logeado
+  /**
+   * Función que se encarga de verificar si el usuario tiene los o un token válido
+   */
+  const checkToken = (controller: AbortController) => {
+    // No ha logeado
+    if (!Cookies.get('access_token') && !Cookies.get('refresh_token')) return
+    // Tiene refresh token, pero no access token
+    if (!Cookies.get('access_token') && Cookies.get('refresh_token')) {
+      refreshToken(controller)
+      return
+    }
+    // Tiene access token, pero no refresh token
+    if (Cookies.get('access_token') && !Cookies.get('refresh_token')) {
+      logoutUser().then(() => router.reload())
+      return
+    }
+    // No tiene ningún token, pero tiene el user en localStorage
+    if (
+      !Cookies.get('access_token') &&
+      !Cookies.get('refresh_token') &&
+      localStorage.getItem('user-data')
+    ) {
+      logoutUser().then(() => router.reload())
+      router.reload()
+      return
+    }
+
+    // Ha logeado
     dispatch({
       type: '[AUTH] - LOGIN',
       payload: JSON.parse(window.localStorage.getItem('user-data') || ''),
@@ -72,8 +99,6 @@ export const AuthProvider: FC<Props> = ({ children }) => {
         path: '/',
       })
 
-      // TODO: Necesitaría una función que me permita saber si el token sigue funcionando, cada que el usuario refresque la página
-
       return true
     } catch (error) {
       return false
@@ -84,10 +109,12 @@ export const AuthProvider: FC<Props> = ({ children }) => {
    * Función que se encarga de cerrar la sesión del usuario
    * Remueve el usuario del localStorage y los tokens de las cookies
    */
-  const logoutUser = () => {
+  const logoutUser = async () => {
     dispatch({ type: '[AUTH] - LOGOUT' })
-    bEagleApi.post('/logout', {
-      token: Cookies.get('refresh_token'),
+    bEagleApi.post('/logout', null, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get('access_token')}`,
+      },
     })
     router.push('/')
     window.localStorage.removeItem('user-data')
@@ -121,6 +148,24 @@ export const AuthProvider: FC<Props> = ({ children }) => {
     })
     if (response.status === 201) return true
     return false
+  }
+
+  /**
+   * Función que se encarga de actualizar el token de acceso
+   */
+  const refreshToken = async (controller: AbortController) => {
+    const response = await bEagleApi.post('/token/refresh', null, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get('refresh_token')}`,
+      },
+      signal: controller.signal,
+    })
+
+    const { data } = response
+    Cookies.set('access_token', data.response.access_token, {
+      expires: 1 / 144,
+    })
+    router.reload()
   }
 
   return (
