@@ -4,11 +4,11 @@ export interface IUser {
   email: string
   name: string
   surname: string
-  bio: string
-  location: string
+  bio?: string
+  location?: string
   phone_prefix: string
   phone: string
-  picture: string
+  picture?: string
   show_reviews: boolean
   rating: number
 }
