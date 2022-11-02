@@ -6,4 +6,4 @@ COPY package.* .
 
 RUN npm install
 
-CMD ["npm", "start"]
+CMD ["npm", "run" ,"dev"]
