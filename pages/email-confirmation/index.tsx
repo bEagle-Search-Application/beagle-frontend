@@ -19,9 +19,9 @@ const EmailConfirmationPage = ({ message }: { message: string }) => {
 import { GetServerSideProps } from 'next'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { email = '', token = '' } = ctx.query
+  const { token = '' } = ctx.query
 
-  if (!email || !token) {
+  if (!token) {
     return {
       props: {
         message: 'No se encontró el token o el email',
@@ -32,8 +32,11 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   // TODO: Si la cuenta ya ha sido creada revisar cómo podriamos manejarlo
   let response
   try {
-    response = await bEagleApi.post('/users/verify/' + token, { email })
-    console.log(response)
+    response = await bEagleApi.post('/users/verify/' + token, null, {
+      params: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     if (response.status === 204)
       return {
         props: {
