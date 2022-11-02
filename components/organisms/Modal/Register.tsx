@@ -22,7 +22,7 @@ const INITIAL_VALUES_REGISTER_FORM = {
   surname: '',
   email: '',
   password: '',
-  phone: 0,
+  phone: '',
   termsAndConditions: false,
   allowNotifications: false,
 }
@@ -70,7 +70,9 @@ export const Register: FC = () => {
       email: Yup.string()
         .email('Introduzca un email válido')
         .required('El email es requerido'),
-      password: Yup.string().min(8,'La contraseña debe tener al menos 8 caracteres').required('La contraseña es requerida'),
+      password: Yup.string()
+        .min(8, 'La contraseña debe tener al menos 8 caracteres')
+        .required('La contraseña es requerida'),
       phone: Yup.number()
         .test(
           'len',
@@ -186,7 +188,7 @@ export const Register: FC = () => {
             <Input
               type='number'
               className='bg-neutral-100'
-              placeholder='Escribe tu número de teléfono aquí'
+              placeholder='+{CODIGO DE PAÍS}{TELEFONO}'
               id='phone'
               {...getFieldProps('phone')}
             />
