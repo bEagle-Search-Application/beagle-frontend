@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: docker/node/Dockerfile
+      args:
+        USER_ID: ${USER_ID}
     container_name: node
     ports:
       - "3000:3000"
