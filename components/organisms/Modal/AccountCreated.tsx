@@ -7,7 +7,6 @@ import { UIContext } from '../../../context'
 
 export const AccountCreated: FC = () => {
   const { handleCloseModal } = useContext(UIContext)
-  const router = useRouter()
 
   return (
     <div className='w-[28.875rem] mx-auto p-8'>
@@ -24,7 +23,7 @@ export const AccountCreated: FC = () => {
             ¡Tu cuenta se ha creado con éxito!
           </h4>
           <span className='text-neutral-400 text-lg'>
-            Debes confirmar tu email antes de realizar una publicación o
+            Debes <u>confirmar tu email</u> antes de realizar una publicación o
             contactar a un usuario.
           </span>
         </div>
@@ -34,12 +33,6 @@ export const AccountCreated: FC = () => {
             className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800'
             content='Cerrar'
             onClick={handleCloseModal}
-          />
-          <Button
-            size='medium'
-            className='text-white bg-success-500 hover:bg-success-700 active:bg-success-900'
-            content='Ir a mi email'
-            onClick={() => router.push('/email-test')}
           />
         </div>
       </div>
