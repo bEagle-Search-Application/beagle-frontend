@@ -3,7 +3,8 @@ import { Button, Input, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const Settings = () => (
-  <MainLayout>
+  <MainLayout haveSidebar={false}>
+    <div>Configuraciones sidebar</div>
     <div className='ml-7 mt-10'>
       <div className='max-w-xl'>
         <div className='flex flex-col gap-10'>
@@ -59,7 +60,6 @@ const Settings = () => (
                 />
               </div>
             </div>
-
             <div className='mt-10 flex justify-between items-center'>
               <div className='text-neutral-600 hover:text-neutral-700 active:text-neutral-800'>
                 <Button
