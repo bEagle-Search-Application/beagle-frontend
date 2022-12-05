@@ -6,7 +6,7 @@
 
 # Docker
 1. Download the Backend Repo, change to the dev branch and run <code>docker-compose up</code> to start the project
-2. Go to the CLI of the "Phpmyadmin" container and run <code>composer install</code> and then <code>php artisan migrate:refresh --seed</code>
+2. Go to the CLI of the "Php" container and run <code>composer install</code> and then <code>php artisan migrate:refresh --seed</code>
 
 # Pages
 <b>Port usually is 3000</b>
