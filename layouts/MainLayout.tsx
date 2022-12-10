@@ -14,10 +14,10 @@ import { ITypeOfModals } from '../interfaces'
 
 interface Props {
   children: ReactNode
-  haveSidebar?: boolean
+  isSidebarMain?: boolean
 }
 
-export const MainLayout: FC<Props> = ({ children, haveSidebar = true }) => {
+export const MainLayout: FC<Props> = ({ children, isSidebarMain = true }) => {
   const { state } = useContext(UIContext)
 
   const RenderAccountModal = (modal: ITypeOfModals) => {
@@ -40,15 +40,9 @@ export const MainLayout: FC<Props> = ({ children, haveSidebar = true }) => {
     <div className='mx-auto'>
       <Navbar />
       <main className='flex'>
-        {haveSidebar ? (
-          <div className='min-w-[17.5rem] max-w-[17.5rem]'>
-            <Sidebar />
-          </div>
-        ) : (
-          <div className='min-w-[17.5rem] max-w-[17.5rem]'>
-            <ConfigurationSidebar />
-          </div>
-        )}
+        <div className='min-w-[17.5rem] max-w-[17.5rem]'>
+          {isSidebarMain ? <Sidebar /> : <ConfigurationSidebar />}
+        </div>
         {/* TODO: hacer responsive */}
         <div className='w-full px-4 border-l border-solid border-neutral-300'>
           {children}

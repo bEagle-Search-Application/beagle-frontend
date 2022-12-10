@@ -3,8 +3,7 @@ import { Button, Input, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
 const Settings = () => (
-  <MainLayout haveSidebar={false}>
-    <div>Configuraciones sidebar</div>
+  <MainLayout isSidebarMain={false}>
     <div className='ml-7 mt-10'>
       <div className='max-w-xl'>
         <div className='flex flex-col gap-10'>

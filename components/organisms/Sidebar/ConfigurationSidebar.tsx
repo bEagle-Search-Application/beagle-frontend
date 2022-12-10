@@ -10,20 +10,6 @@ export const ConfigurationSidebar = () => {
     <div className='pt-5 max-h-[53.75rem] h-[calc(100vh_-_5.625rem)] flex flex-col justify-between text-lg select-none'>
       {/* OptionGroup Icons */}
       <div>
-        <NextLink href='/configuraciones/general' passHref>
-          <a>
-            <div
-              className={`flex gap-2 px-8 py-5 ${
-                router.route === '/configuraciones/general'
-                  ? 'bg-primary-100'
-                  : ''
-              } hover:bg-primary-100 cursor-pointer`}
-            >
-              <Option label='General' />
-            </div>
-          </a>
-        </NextLink>
-
         <NextLink href='/configuraciones/edit-profile' passHref>
           <a>
             <div
