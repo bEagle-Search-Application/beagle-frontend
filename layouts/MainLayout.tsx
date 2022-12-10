@@ -7,6 +7,7 @@ import {
   Navbar,
   Register,
   Sidebar,
+  ConfigurationSidebar,
 } from '../components'
 import { UIContext } from '../context'
 import { ITypeOfModals } from '../interfaces'
@@ -43,7 +44,11 @@ export const MainLayout: FC<Props> = ({ children, haveSidebar = true }) => {
           <div className='min-w-[17.5rem] max-w-[17.5rem]'>
             <Sidebar />
           </div>
-        ) : null}
+        ) : (
+          <div className='min-w-[17.5rem] max-w-[17.5rem]'>
+            <ConfigurationSidebar />
+          </div>
+        )}
         {/* TODO: hacer responsive */}
         <div className='w-full px-4 border-l border-solid border-neutral-300'>
           {children}
