@@ -1,7 +1,17 @@
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
+import { motion } from 'framer-motion'
 
 import { Option } from '../../atoms'
+
+const variants = {
+  initial: {
+    color: 'var(--color-neutral-400)',
+  },
+  hover: {
+    color: 'var(--color-neutral-600)',
+  },
+}
 
 export const ConfigurationSidebar = () => {
   const router = useRouter()
@@ -9,18 +19,21 @@ export const ConfigurationSidebar = () => {
   return (
     <div className='pt-5 max-h-[53.75rem] h-[calc(100vh_-_5.625rem)] flex flex-col justify-between text-lg select-none'>
       {/* OptionGroup Icons */}
-      <div>
+      <div className=''>
         <NextLink href='/configuraciones/edit-profile' passHref>
           <a>
-            <div
-              className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                router.route === '/configuraciones/edit-profile'
-                  ? 'bg-primary-100'
-                  : ''
-              } hover:bg-primary-100 active:bg-primary-100`}
+            <motion.div
+              initial='initial'
+              whileHover='hover'
+              variants={variants}
+              transition={{
+                duration: 0.3,
+                ease: 'easeInOut',
+              }}
+              className='px-8 py-5 cursor-pointer font-bold'
             >
               <Option label='Editar Perfil' />
-            </div>
+            </motion.div>
           </a>
         </NextLink>
 
