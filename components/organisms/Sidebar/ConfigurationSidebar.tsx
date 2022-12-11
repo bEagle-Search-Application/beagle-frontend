@@ -11,6 +11,9 @@ const variants = {
   hover: {
     color: 'var(--color-neutral-600)',
   },
+  active: {
+    color: 'var(--color-neutral-600)',
+  },
 }
 
 export const ConfigurationSidebar = () => {
@@ -20,12 +23,13 @@ export const ConfigurationSidebar = () => {
     <div className='pt-5 max-h-[53.75rem] h-[calc(100vh_-_5.625rem)] flex flex-col justify-between text-lg select-none'>
       {/* OptionGroup Icons */}
       <div className=''>
-        <NextLink href='/configuraciones/edit-profile' passHref>
+        <NextLink href='/configuraciones' passHref>
           <a>
             <motion.div
               initial='initial'
               whileHover='hover'
               variants={variants}
+              animate={router.route === '/configuraciones' ? 'active' : ''}
               transition={{
                 duration: 0.3,
                 ease: 'easeInOut',
@@ -37,30 +41,44 @@ export const ConfigurationSidebar = () => {
           </a>
         </NextLink>
 
-        <NextLink href='/configuraciones/password' passHref>
+        <NextLink href='/configuraciones/cambiar-contrasenia' passHref>
           <a>
-            <div
-              className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                router.route === '/configuraciones/password'
-                  ? 'bg-primary-100'
+            <motion.div
+              initial='initial'
+              whileHover='hover'
+              variants={variants}
+              animate={
+                router.route === '/configuraciones/cambiar-contrasenia'
+                  ? 'active'
                   : ''
-              } hover:bg-primary-100 active:bg-primary-100`}
+              }
+              transition={{
+                duration: 0.3,
+                ease: 'easeInOut',
+              }}
+              className='px-8 py-5 cursor-pointer font-bold'
             >
               <Option label='Contraseña' />
-            </div>
+            </motion.div>
           </a>
         </NextLink>
-        <NextLink href='/configuraciones/contact' passHref>
+        <NextLink href='/configuraciones/contacto' passHref>
           <a>
-            <div
-              className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                router.route === '/configuraciones/contact'
-                  ? 'bg-primary-100'
-                  : ''
-              } hover:bg-primary-100 active:bg-primary-100`}
+            <motion.div
+              initial='initial'
+              whileHover='hover'
+              variants={variants}
+              animate={
+                router.route === '/configuraciones/contacto' ? 'active' : ''
+              }
+              transition={{
+                duration: 0.3,
+                ease: 'easeInOut',
+              }}
+              className='px-8 py-5 cursor-pointer font-bold'
             >
               <Option label='Contacto' />
-            </div>
+            </motion.div>
           </a>
         </NextLink>
 
@@ -68,17 +86,25 @@ export const ConfigurationSidebar = () => {
           <hr className='w-[13.75rem] border-gray-300 shadow-2xl shadow-black ' />
         </div>
 
-        <NextLink href='/configuraciones/delete-account' passHref>
+        <NextLink href='/configuraciones/eliminar-cuenta' passHref>
           <a>
-            <div
-              className={`px-8 py-5 cursor-pointer transition ease-in duration-150 ${
-                router.route === '/configuraciones/delete-account'
-                  ? 'bg-primary-100'
+            <motion.div
+              initial='initial'
+              whileHover='hover'
+              variants={variants}
+              animate={
+                router.route === '/configuraciones/eliminar-cuenta'
+                  ? 'active'
                   : ''
-              } hover:bg-primary-100 active:bg-primary-100 text-red-500`}
+              }
+              transition={{
+                duration: 0.3,
+                ease: 'easeInOut',
+              }}
+              className='px-8 py-5 cursor-pointer font-bold'
             >
               <Option label='Eliminar cuenta' />
-            </div>
+            </motion.div>
           </a>
         </NextLink>
       </div>
