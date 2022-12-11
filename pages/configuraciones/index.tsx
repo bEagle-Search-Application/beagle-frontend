@@ -2,7 +2,7 @@ import { LeftIcon, DownArrowIcon } from '../../assets'
 import { Button, Input, wrapperPrivateRoute } from '../../components'
 import { MainLayout } from '../../layouts'
 
-const Settings = () => (
+const SettingsPage = () => (
   <MainLayout isSidebarMain={false}>
     <div className='ml-7 mt-10'>
       <div className='max-w-xl'>
@@ -20,7 +20,7 @@ const Settings = () => (
             </h2>
             <div className='mt-2 text-sm'>
               <span className='text-neutral-400'>Configuraciones /</span>
-              <span className='text-neutral-600'> General</span>
+              <span className='text-neutral-600'> Editar perfil</span>
             </div>
           </div>
           <form>
@@ -80,4 +80,4 @@ const Settings = () => (
   </MainLayout>
 )
 
-export default wrapperPrivateRoute(Settings)
+export default wrapperPrivateRoute(SettingsPage)
