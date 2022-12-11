@@ -103,7 +103,11 @@ export const ConfigurationSidebar = () => {
               }}
               className='px-8 py-5 cursor-pointer font-bold'
             >
-              <Option label='Eliminar cuenta' />
+              <Option
+                label='Eliminar cuenta'
+                // TODO text color ? variants CSS or TW ?
+                className='text-red-500 hover:text-red-700'
+              />
             </motion.div>
           </a>
         </NextLink>
