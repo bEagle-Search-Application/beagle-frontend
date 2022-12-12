@@ -39,7 +39,7 @@ export const MainLayout: FC<Props> = ({ children, isSidebarMain = true }) => {
   return (
     <div className='mx-auto'>
       <Navbar />
-      <main className='flex'>
+      <main className='flex min-h-screen'>
         <div className='min-w-[17.5rem] max-w-[17.5rem]'>
           {isSidebarMain ? <Sidebar /> : <ConfigurationSidebar />}
         </div>
