@@ -14,6 +14,7 @@ const SettingsPage = () => (
               leftIcon={<LeftIcon size={16} stroke='#4B5563' />}
             />
           </div>
+          {/* TITULO CONFIGURACIONES */}
           <div className=''>
             <h2 className='text-neutral-900 text-4xl font-bold'>
               Configuraciones
@@ -51,6 +52,7 @@ const SettingsPage = () => (
               />
             </div>
           </div>
+          {/* FORM */}
           <form className='flex flex-col gap-10'>
             {/* INFORMACIÓN BÁSICA */}
             <div className='flex flex-col gap-4'>
