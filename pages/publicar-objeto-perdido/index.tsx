@@ -30,15 +30,19 @@ const PostLostObject = () => (
               leftIcon={<LeftIcon size={16} stroke='#4B5563' />}
             />
           </div>
+          {/* TITULO - PUBLICAR UN ANUNCIO */}
           <h4 className='text-[1.75rem] text-neutral-900 leading-8 font-semibold'>
             Publicar un anuncio
           </h4>
 
+          {/* FORM */}
           <form className='px-4'>
+            {/* PASO 1 */}
             <div className='flex flex-col gap-4'>
               <span className='text-[1rem] text-neutral-600 leading-4 tracking-[1px] font-bold'>
                 PASO 1: CAMPO OBLIGATORIO
               </span>
+              {/* TITULO */}
               <div className='flex flex-col gap-1'>
                 <span className='text-neutral-600 text-sm font-bold'>
                   Título
@@ -48,6 +52,7 @@ const PostLostObject = () => (
                   placeholder='Perro labrador negro...'
                 />
               </div>
+              {/* QUÉ PASÓ */}
               <div className='flex flex-col gap-1'>
                 <span className='text-neutral-600 text-sm font-bold'>
                   ¿Qué pasó?
@@ -71,6 +76,7 @@ const PostLostObject = () => (
                   </div>
                 </div>
               </div>
+              {/* QUÉ PERDISTE */}
               <div className='flex flex-col gap-1'>
                 <span className='text-neutral-600 text-sm font-bold'>
                   {/* TODO: Corregir o dinamizar perdiste/encontraste */}
@@ -103,6 +109,7 @@ const PostLostObject = () => (
                   </div>
                 </div>
               </div>
+              {/* DONDE LO VISTE POR ÚLTIMA VEZ */}
               <div className='flex flex-col gap-1'>
                 <span className='text-neutral-600 text-sm font-bold'>
                   ¿Dónde lo viste por última vez?
@@ -113,6 +120,7 @@ const PostLostObject = () => (
                 />
                 {/* TODO: Integración con google maps y mostrar la línea de km */}
               </div>
+              {/* CONTACTO */}
               <div className='flex flex-col gap-1'>
                 <span className='text-neutral-600 text-sm font-bold'>
                   Contacto
@@ -176,6 +184,7 @@ const PostLostObject = () => (
                 </div>
               </div>
             </div>
+            {/* PASO 2 */}
             <div className='mt-10'>
               <span className='text-[1rem] text-neutral-600 leading-4 tracking-[1px] font-bold'>
                 PASO 2: CAMPO OPCIONAL
